@@ -1,0 +1,106 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    
+    
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.urlRow
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.urlResult
+{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.urlForm
+{
+    flex-grow: 1;
+}
+.urlBox
+{
+    
+    flex-grow: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.url_result {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    background-color: #f4f4f4; /* Background color similar to the container */
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.spacer
+{
+    flex-grow: 1;
+}
+
+.appabar
+{
+    display: flex;
+    background-color: white;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 3vw;
+    margin-bottom: 50px;
+}
+
