@@ -1,4 +1,4 @@
-from pyClasses.FeatureExtraction import FeatureExtractionURLS
+from modules.FeatureExtraction import FeatureExtractionURLS
 import pandas as pd
 import threading
 
