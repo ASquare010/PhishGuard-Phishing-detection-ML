@@ -80,7 +80,8 @@ function main(tabs){
     });
 
     submitButtonEmail.addEventListener('click', function() {
-        const mail = emailInput.value; // Get the URL value and trim whitespace
+
+        var mail =  document.getElementById('emailInput').value; // Get the URL value and trim whitespace
         
         let emailData = { 'email':mail };
         
