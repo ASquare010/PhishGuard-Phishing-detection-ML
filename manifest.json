@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Phishing Detection",
+    "version": "0.1",
+    "description": "Description of your extension.",
+    
+    "permissions": [
+      "tabs",
+      "activeTab"
+    ],
+
+    "action": {
+      "default_popup": "templates/popup.html",
+      "default_icon": {
+        "128": "static/assets/icon128.png"
+      }
+    },
+
+    "background": {
+      "service_worker": "static/js/background.js"
+    },
+    "icons": {
+        "128": "static/assets/icon128.png"
+    }
+  }
+  

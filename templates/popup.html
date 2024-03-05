@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/extension.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Phishing Detection</h1>
+        
+        <h3 class="section-title">Current Page Detection</h3>
+        <div class="section">
+            <p id="currentTabUrl" class="section-content">Checking URL</p><p id="emailCheck" class="section-content"></p>
+        </div>
+
+        <h3 class="section-title">Custome Detection</h3>
+        <div class="section">
+            <label for="urlInput" class="input-label">Enter URL:</label>
+            <input type="text" id="urlInput" name="urlInput" class="input-field">
+            <button id="submitUrl" class="submit-button">Submit</button>
+        </div>
+
+        <div class="section">
+            <label for="emailInput" class="input-label">Enter Email Header:</label>
+            <input type="text" id="emailInput" name="emailInput" class="input-field">
+            <button id="submitEmail" class="submit-button">Submit</button>
+        </div>
+        <textarea id="text" hidden="true"></textarea>
+    </div>
+    <script src="../static/js/popup.js"></script>
+</body>
+</html>
