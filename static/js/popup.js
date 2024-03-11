@@ -1,5 +1,5 @@
 // popup.js
-const base = 'http://192.168.0.102:8080';
+const base = 'http://172.20.193.211:8080';
 const url = base+'/urlpredictExt';
 const email = base+'/emailpredictExt';
 
@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) 
     {        
         main(tabs)
+
     });
 
 });
@@ -44,6 +45,9 @@ function main(tabs){
     submitButtonUrl = document.getElementById('submitUrl');
     submitButtonEmail = document.getElementById('submitEmail');
     let urlData = { 'url':currentTabUrl };
+
+    document.getElementById('currentPageink').textContent = currentTabUrl.substring(0, 25)+"...";
+
 
 
     fetchData(url, urlData)

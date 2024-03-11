@@ -6,7 +6,8 @@
     
     "permissions": [
       "tabs",
-      "activeTab"
+      "activeTab",
+      "storage"
     ],
 
     "action": {
@@ -15,6 +16,14 @@
         "128": "static/assets/icon128.png"
       }
     },
+    
+    "content_scripts": [
+      {
+        "matches": ["https://mail.google.com/*"],
+        "js": ["static/js/contentScript.js"]
+      }
+    ],
+  
 
     "background": {
       "service_worker": "static/js/background.js"

@@ -38,4 +38,4 @@ class PredictionURLS:
 
                 result = rf.predict(df)
 
-                return f"Result: {result} \n"
+                return f'Result: {result}'
