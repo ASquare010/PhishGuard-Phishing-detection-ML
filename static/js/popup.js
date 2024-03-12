@@ -1,5 +1,5 @@
 // popup.js
-const base = 'http://192.168.100.102:8080';
+const base = 'http://192.168.0.106:8080';
 
 const url = base+'/urlpredictExt';
 const email = base+'/emailpredictExt';
@@ -115,8 +115,9 @@ function getEmailHeader(results) {
     
     document.getElementById('emailInput').value = emailHeader.innerText;
 
-    message.innerText = emailHeader.innerText.substring(0, 30)+"...";
     
+    var match = emailHeader.innerText.match(/From:.*?(?=>)/);
+    message.innerText =match+">";
     let emailData = { 'email':emailHeader.innerText };
     getEmailResult(emailData);
 
