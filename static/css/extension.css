@@ -7,8 +7,25 @@ body {
 }
 
 .container {
-    max-width: 600px;
     margin: 0 auto;
+}
+
+
+.container::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.container::-webkit-scrollbar-track {
+    background: #1f1f1f; 
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px; 
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background: #555; 
 }
 
 .title {
@@ -25,31 +42,37 @@ body {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
+    
 }
 
 .section-content {
     font-size: 16px;
+    outline: 1px solid rgba(255, 255, 255, 0.404);
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .input-label {
     font-size: 18px;
     display: block;
     margin-bottom: 5px;
+
 }
 
 .input-field {
-    width: calc(100% - 90px);
-    padding: 8px;
+    width: 87%;
+    padding: 16px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-bottom: 10px;
+    margin:10px;
 }
 
 .submit-button {
-    width: 80px;
-    padding: 8px;
+    
+    padding: 10px;
     font-size: 16px;
+    width: 50%;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -60,4 +83,24 @@ body {
 
 .submit-button:hover {
     background-color: #0056b3;
+}
+
+.grow
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    font-size: medium;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+.spacer{
+    padding-top: 6px;
+    flex-grow: 1;
+}
+#customBtn
+{
+    width: 80%;
 }
