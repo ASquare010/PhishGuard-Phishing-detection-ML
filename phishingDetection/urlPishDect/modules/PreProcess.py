@@ -563,7 +563,7 @@ class PreProcessURLS:
         return self.features
     
     
-    def mergeFiles(self,folder_path = 'output/',merged_file_path = 'merged_file.csv' ):
+    def mergeFiles(self,folder_path = 'output/',merged_file_path = 'dataset/preProcessed.csv' ):
 
         dfs = []
 
@@ -578,7 +578,6 @@ class PreProcessURLS:
         
         merged_df = pd.concat(dfs, ignore_index=True)
         merged_df.to_csv(merged_file_path, index=False)
-
         print("Merging complete. Merged file saved as:", merged_file_path)
 
 
