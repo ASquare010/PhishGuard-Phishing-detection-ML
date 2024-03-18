@@ -1,4 +1,4 @@
-from phishingDetection.urlPishDect.modules.FeatureExtraction import FeatureExtractionURLS
+from phishingDetection.urlPishDect.modules.PreProcess import PreProcessURLS
 import joblib
 import pandas as pd
 
@@ -9,16 +9,21 @@ class PredictionURLS:
         def __init__(self,urls = [],modelPath = "phishingDetection/urlPishDect/model/bestmodel.pkl"):                
 
                 for url in urls:
-                        self.resultOutput = self.resultOutput + self.predict(url,modelPath)
+                        self.resultOutput = self.resultOutput + self.predictUrl(url,modelPath)
 
 
-        def predict(self,url,modelPath = "phishingDetection/urlPishDect/model/bestmodel.pkl"):
+        def preProcess(self,url):
+
+                # Extract features from the URL
+                return PreProcessURLS().appendFeature(url)
+
+        def predictUrl(self,url,modelPath = "phishingDetection/urlPishDect/model/bestmodel.pkl"):
 
                 # Load the trained model
                 rf = joblib.load(modelPath)
 
                 # Extract features from the URL
-                features = FeatureExtractionURLS().appendFeature(url)
+                features = self.preProcess(url)
 
                 # Define feature names
                 feature_names = [

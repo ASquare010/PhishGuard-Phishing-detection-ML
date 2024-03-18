@@ -1,5 +1,5 @@
 // popup.js
-const base = 'http://192.168.0.106:8080';
+const base = 'http://172.20.193.38:8080';
 
 const url = base+'/urlpredictExt';
 const email = base+'/emailpredictExt';
