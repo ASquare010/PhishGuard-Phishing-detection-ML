@@ -374,13 +374,15 @@ class PreProcessURLS:
 
     # 17. InfoEmail
     def infoEmail(self):
-        try:
-            if re.findall(r"[mail\(\)|mailto:?]", self.soap):
-                return -1
-            else:
-                return 1
-        except:
-            return -2
+            try:
+                if re.search(r"mail\(\)|mailto:?", str(self.soup)):
+
+                    return -1
+                else:
+                    return 1
+            except:
+                return -2
+
 
     # 18. AbnormalURL
     def abnormalURL(self):
@@ -417,7 +419,7 @@ class PreProcessURLS:
     # 21. DisableRightClick
     def disableRightClick(self):
         try:
-            if re.findall(r"event.button ?== ?2", self.response.text):
+            if re.search(r"(event\.button ?== ?2)|(contextmenu)", self.response.text, re.IGNORECASE):
                 return 1
             else:
                 return -1
@@ -437,7 +439,7 @@ class PreProcessURLS:
     # 23. IframeRedirection
     def iframeRedirection(self):
         try:
-            if re.findall(r"[<iframe>|<frameBorder>]", self.response.text):
+            if re.findall(r"<iframe|frameBorder", self.response.text,re.IGNORECASE):
                 return 1
             else:
                 return -1
@@ -563,22 +565,56 @@ class PreProcessURLS:
         return self.features
     
     
-    def mergeFiles(self,folder_path = 'output/',merged_file_path = 'dataset/preProcessed.csv' ):
+    # def mergeFiles(self,folder_path = 'output/',merged_file_path = 'dataset/preProcessed.csv' ):
 
+    #     dfs = []
+
+    #     for file_name in os.listdir(folder_path):
+        
+    #         if file_name.endswith('.csv'):
+        
+    #             file_path = os.path.join(folder_path, file_name)
+    #             df = pd.read_csv(file_path)
+        
+    #             dfs.append(df)
+        
+    #     merged_df = pd.concat(dfs, ignore_index=True)
+    #     merged_df.to_csv(merged_file_path, index=False)
+    #     print("Merging complete. Merged file saved as:", merged_file_path)
+
+
+    def mergeFiles(self, folder_path='output/', merged_file_path='dataset/preProcessed.csv'):
+        # Check if the merged file exists
+        if os.path.exists(merged_file_path):
+            # If the merged file exists, append to it
+            mode = 'a'
+            header = False  # Do not write header again
+        else:
+            # If the merged file doesn't exist, create it
+            mode = 'w'
+            header = True  # Write header for the first time
+        
         dfs = []
 
         for file_name in os.listdir(folder_path):
-        
             if file_name.endswith('.csv'):
-        
                 file_path = os.path.join(folder_path, file_name)
                 df = pd.read_csv(file_path)
-        
                 dfs.append(df)
         
         merged_df = pd.concat(dfs, ignore_index=True)
-        merged_df.to_csv(merged_file_path, index=False)
+        merged_df.to_csv(merged_file_path, mode=mode, index=False, header=header)
         print("Merging complete. Merged file saved as:", merged_file_path)
+
+
+    def deleteFilesInDirectory(self,directory):
+        # Iterate over all files in the directory
+        for filename in os.listdir(directory):
+            file_path = os.path.join(directory, filename)
+            # Check if the path points to a file
+            if os.path.isfile(file_path):
+                # Delete the file
+                os.remove(file_path)
 
 
     def getBalancedDataframe(self,name="malicious_phish.csv"):

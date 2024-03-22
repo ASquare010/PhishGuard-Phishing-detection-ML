@@ -1,4 +1,4 @@
-from phishingDetection.urlPishDect.modules.PreProcess import PreProcessURLS
+from modules.PreProcess import PreProcessURLS
 import pandas as pd
 import threading
 
