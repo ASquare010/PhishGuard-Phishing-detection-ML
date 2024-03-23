@@ -6,13 +6,11 @@ import socket
 import requests
 from googlesearch import search
 import whois
-import pandas as pd
 from datetime import date
 from urllib.parse import urlparse
 import numpy as np
 import pandas as pd
 import os
-import numpy as np
 
 class PreProcessURLS:
 
