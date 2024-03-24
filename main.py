@@ -1,5 +1,5 @@
-from phishingDetection.urlPishDect.modules.Prediction import PredictionURLS
-from phishingDetection.emailPishDect.modules.FeatureExtractionEmail import FeatureExtractionEmail
+import phishingDetection.urlPishDect.modules.Prediction as PredictionURLS
+import phishingDetection.emailPishDect.modules.FeatureExtractionEmail as FeatureExtractionEmail
 from flask_cors import CORS
 from flask import Flask,render_template, request,jsonify
 
@@ -18,7 +18,7 @@ def loadPredict(predict):
 
 def predictionEmail(email_content):
         
-    obj=FeatureExtractionEmail(email_content)
+    obj=FeatureExtractionEmail.FeatureExtractionEmail(email_content)
     df = obj.df
     prad = loadPredict(df)
     

@@ -1,18 +1,27 @@
-# docker build --tag phishing_detection .
-FROM python:3.11-alpine
+# Use an official Python runtime as a base image
+FROM python:3.9-slim
 
-# Set the working directory
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy your Python script into the container
-COPY main.py /app/main.py
+# Install system dependencies
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends gcc \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install Flask and other dependencies
-RUN pip install Flask
+# Install Python dependencies
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the port that your Flask app runs on
+# Copy the application code into the container
+COPY . /app/
+
+# Expose port 5000
 EXPOSE 5000
 
 # Run the Flask application
 CMD ["python", "main.py"]
-
