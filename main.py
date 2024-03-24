@@ -1,11 +1,10 @@
-import phishingDetection.urlPishDect.modules.Prediction as PredictionURLS
-import phishingDetection.emailPishDect.modules.FeatureExtractionEmail as FeatureExtractionEmail
+from phishingDetection.urlPishDect.modules.Prediction import PredictionURLS
+from phishingDetection.emailPishDect.modules.FeatureExtractionEmail import FeatureExtractionEmail
 from flask_cors import CORS
 from flask import Flask,render_template, request,jsonify
 
 import warnings
 import joblib
-import os
 
 
 def loadPredict(predict):
@@ -18,7 +17,7 @@ def loadPredict(predict):
 
 def predictionEmail(email_content):
         
-    obj=FeatureExtractionEmail.FeatureExtractionEmail(email_content)
+    obj=FeatureExtractionEmail(email_content)
     df = obj.df
     prad = loadPredict(df)
     
@@ -110,5 +109,4 @@ def emailpredictExt():
 
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host="0.0.0.0", port=5000, debug=False)
