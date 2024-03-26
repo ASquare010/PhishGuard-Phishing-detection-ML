@@ -19,7 +19,10 @@ def predictionEmail(email_content):
         
     obj=FeatureExtractionEmail(email_content)
     df = obj.df
-    prad = loadPredict(df)
+    loaded_scaler = joblib.load('phishingDetection/emailPishDect/model/scaler_model.joblib')
+    t_df = loaded_scaler.transform(df)
+    
+    prad = loadPredict(t_df)
     
     return prad
 

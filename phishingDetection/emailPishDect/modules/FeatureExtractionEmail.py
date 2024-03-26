@@ -2,14 +2,11 @@ import email
 import pandas as pd
 import numpy as np
 import re  
-import joblib
-
-
 
 
 class FeatureExtractionEmail:
 
-    df = []
+    df = pd.DataFrame()
 
     def __init__(self,emaill):
         final_features_list = []
@@ -252,14 +249,9 @@ class FeatureExtractionEmail:
 
         df_filtered = df[final_features_list]
         
-        arr = df_filtered.values
-
-        loaded_scaler = joblib.load('phishingDetection/emailPishDect/model/scaler_model.joblib')
-        array = loaded_scaler.transform(arr)
+        # arr = df_filtered.values
         
-        # print("array-> ",final_features_list)
-
-        self.df = array
+        self.df = df_filtered
     
 
     def domain_match_check(self,row, first_col, second_col): 
