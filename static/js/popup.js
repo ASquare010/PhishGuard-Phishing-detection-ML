@@ -1,5 +1,5 @@
 // popup.js
-const base = 'http://127.0.0.1:5000';
+const base = 'https://phishing-detection-357f9186c0b4.herokuapp.com/';
 
 const url = base+'/urlpredictExt';
 const email = base+'/emailpredictExt';
