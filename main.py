@@ -3,8 +3,27 @@ from phishingDetection.emailPishDect.modules.FeatureExtractionEmail import Featu
 from flask_cors import CORS
 from flask import Flask,render_template, request,jsonify
 
+import gzip
 import warnings
 import joblib
+import os
+
+def compress_pickle(input_file, output_file):
+    with open(input_file, 'rb') as f_in:
+        with gzip.open(output_file, 'wb') as f_out:
+            f_out.write(f_in.read())
+
+
+def decompress_pickle(input_file, output_file):
+    if not os.path.exists(output_file):
+        with gzip.open(input_file, 'rb') as f_in:
+            with open(output_file, 'wb') as f_out:
+                f_out.write(f_in.read())
+ 
+
+def decompressFiles():
+    decompress_pickle('phishingDetection/emailPishDect/model/best_model.gz','phishingDetection/emailPishDect/model/best_model.pkl')
+    decompress_pickle('phishingDetection/urlPishDect/model/bestmodel.gz','phishingDetection/urlPishDect/model/bestmodel.pkl')
 
 
 def loadPredict(predict):
@@ -16,7 +35,8 @@ def loadPredict(predict):
 
 
 def predictionEmail(email_content):
-        
+    
+    decompressFiles()
     obj=FeatureExtractionEmail(email_content)
     df = obj.df
     loaded_scaler = joblib.load('phishingDetection/emailPishDect/model/scaler_model.joblib')
@@ -31,7 +51,7 @@ def predictionEmail(email_content):
 def predictionURLS( urls=[]):
     
     warnings.filterwarnings("ignore", category=UserWarning, message="Trying to unpickle estimator.*from version.*when using version.*")  
-
+    decompressFiles()
     obj = PredictionURLS(urls)
 
     return obj.resultOutput
@@ -109,7 +129,6 @@ def emailpredictExt():
     return {"result": f"Email Result: {result}"}
 
 
-
-
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=False)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
