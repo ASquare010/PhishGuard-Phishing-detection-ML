@@ -46,11 +46,22 @@ function getUrlResult(urlData)
     fetchData(url, urlData)
     .then(data => {
         // Handle the data returned from the server
-        document.getElementById('currentTabUrl').textContent = data['result'];
+        var currentTabUrl = document.getElementById('currentTabUrl');
+        currentTabUrl.textContent = data['result'];
+        
+
+        if (data['result'].includes('Safe')) {
+            currentTabUrl.style.backgroundColor = "#91EF91";
+            
+        } else {
+            currentTabUrl.style.backgroundColor = "red";
+            currentTabUrl.style.color = "white";
+        }
     })
     .catch(error => {
         // Handle error
         document.getElementById('currentTabUrl').textContent = 'Error: ' + error.message;
+        
     });
 }
 
@@ -59,7 +70,15 @@ function getEmailResult(emailData)
 {
     fetchData(email, emailData)
     .then(data => {
-        document.getElementById('currentEmail').textContent = data['result'];
+        var currentEmail =document.getElementById('currentEmail')
+        currentEmail.textContent = data['result'];
+        
+        if (data['result'].includes('Safe')) {
+            currentEmail.style.backgroundColor = "#91EF91";
+        } else {
+            currentEmail.style.backgroundColor = "red";
+            currentEmail.style.color = "white";
+        }
     })
     .catch(error => {
         // Handle error

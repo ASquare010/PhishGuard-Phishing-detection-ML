@@ -77,7 +77,6 @@ def urlpredict():
     
     url_result = predictionURLS([url])
 
-    # Render the result template with the prediction result
     return render_template('index.html', url_result=url_result)
 
 
@@ -90,7 +89,6 @@ def emailpredict():
     
     email_result = predictionEmail(email)
 
-    # Render the result template with the prediction result
     return render_template('index.html', email_result=email_result)
 
 
@@ -125,7 +123,7 @@ def emailpredictExt():
     result = 'Phishing'
     if(email_result[0] == 0):
         result = 'Safe'
-    # Render the result template with the prediction result
+
     return {"result": f"Email Result: {result}"}
 
 
