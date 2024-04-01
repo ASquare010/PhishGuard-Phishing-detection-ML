@@ -63,7 +63,10 @@ def predictionURLS( urls=[]):
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
+VALID_API_KEYS = ['aB3x8Yp2qR5sW9tZ']
 
+def verify_api_key(api_key):
+    return api_key in VALID_API_KEYS
 
 @app.route('/')
 def home():
@@ -95,11 +98,17 @@ def emailpredict():
 
 
 
+
 @app.route('/urlpredictExt', methods=['POST'])
 def urlpredictExt():
-    
+
     data = request.json
     url = data.get('url', '')
+    api_key = data.get('key', '')
+    
+    # Check if the API key is valid
+    if not verify_api_key(api_key):
+        return jsonify({"result": "Invalid API key"})
     
     url_result = predictionURLS([url])
 
@@ -111,10 +120,15 @@ def urlpredictExt():
 
 @app.route('/emailpredictExt', methods=['POST'])
 def emailpredictExt():
+
     
     data = request.json
     email = data.get('email', '')
+    api_key = data.get('key', '')
     
+    # Check if the API key is valid
+    if not verify_api_key(api_key):
+        return jsonify({"result": "Invalid API key"})    
 
     email_result = predictionEmail(email)
     
@@ -123,8 +137,9 @@ def emailpredictExt():
     result = 'Phishing'
     if(email_result[0] == 0):
         result = 'Safe'
-
+    # Render the result template with the prediction result
     return {"result": f"Email Result: {result}"}
+
 
 
 if __name__ == '__main__':

@@ -1,8 +1,12 @@
 // popup.js
 const base = 'https://phishing-detection-357f9186c0b4.herokuapp.com/';
+// const base = 'http://172.20.193.196:5000';
+
+const apiKey = 'aB3x8Yp2qR5sW9tZ';
 
 const url = base+'/urlpredictExt';
 const email = base+'/emailpredictExt';
+
 
 
 document.getElementById('customBtn').addEventListener('click', function() {
@@ -93,7 +97,7 @@ function urlCheck(tabs)
     var currentTabUrl = currentTab.url;
     submitButtonUrl = document.getElementById('submitUrl');
     submitButtonEmail = document.getElementById('submitEmail');
-    let urlData = { 'url':currentTabUrl };
+    let urlData = { 'url':currentTabUrl, 'key':apiKey};
 
     document.getElementById('currentPageink').textContent = currentTabUrl.substring(0, 25)+"...";
 
@@ -107,7 +111,7 @@ function urlCheck(tabs)
 
         if(pattern.test(link)) {
 
-            let urlData = { 'url':link };
+            let urlData = { 'url':link, 'key':apiKey };
             document.getElementById('currentTabUrl').textContent = 'Checking Url';
             getUrlResult(urlData);
         } 
@@ -121,7 +125,7 @@ function urlCheck(tabs)
 
         var mail =  document.getElementById('emailInput').value;
         
-        let emailData = { 'email':mail };
+        let emailData = { 'email':mail , 'key':apiKey};
         
         document.getElementById('currentEmail').textContent = 'Checking Email';
     
@@ -144,7 +148,7 @@ function getEmailHeader(results) {
     
     var match = emailHeader.innerText.match(/From:.*?(?=>)/);
     message.innerText =match+">";
-    let emailData = { 'email':emailHeader.innerText };
+    let emailData = { 'email':emailHeader.innerText , 'key':apiKey};
     getEmailResult(emailData);
 
 }
