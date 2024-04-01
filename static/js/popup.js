@@ -103,11 +103,18 @@ function urlCheck(tabs)
     submitButtonUrl.addEventListener('click', function() {
         const link = urlInput.value.trim(); // Get the URL value and trim whitespace
         
-        let urlData = { 'url':link };
+        var pattern = /^(http|https):\/\/[^ "]+$/;
+
+        if(pattern.test(link)) {
+
+            let urlData = { 'url':link };
+            document.getElementById('currentTabUrl').textContent = 'Checking Url';
+            getUrlResult(urlData);
+        } 
+        else{
+            alert('Invalid URL entered. Please enter a valid URL.');
+        }
         
-        document.getElementById('currentTabUrl').textContent = 'Checking Url';
-    
-        getUrlResult(urlData)
     });
 
     submitButtonEmail.addEventListener('click', function() {
