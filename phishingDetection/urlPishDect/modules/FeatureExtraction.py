@@ -10,7 +10,7 @@ class FeatureExtractionURLS:
         
         chunk_indices  = self.process_dataframe_in_chunks( df, chunk_size = chunk_size )
         
-        self.launchThreads(df ,chunk_indices)
+        self.launch_threads(df ,chunk_indices)
 
         print("Processing complete.")
 
@@ -38,7 +38,7 @@ class FeatureExtractionURLS:
         return chunk_indices
     
 
-    def launchThreads(self, df , chunk_indices):
+    def launch_threads(self, df , chunk_indices):
 
         threads = []  
 

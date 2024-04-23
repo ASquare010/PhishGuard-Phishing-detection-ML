@@ -11,57 +11,49 @@
 <body  class="container"> 
 
     <div id="autoDetection">
-        <h1 class="title">Phishing Detection</h1>
-        
-        <h3 class="section-title">Current Page Detection</h3>
 
-        <div class="section">
+        <h1 class="title">Phishing Detection</h1>
+
+        <div class="tab">
+            <button class="tablinks" id="urlsTab">Url</button>
+            <button class="tablinks" id="emailTab">Email</button>
+        </div>
+           
+        <div id="URLs" class="tabcontent">
+            <h3 class="section-title">Check Url or Link</h3>
+            
+            <div class="stack">
+                <label for="urlInput" class="input-label"></label>
+                <input type="text" id="urlInput" name="urlInput" class="shared-field input-field" placeholder="Enter Url">
+                <button id="submitUrl" class="button-round url-submint">></button>
+            </div>
+        
+            <h3 class="section-title">Current Page Detection</h3>
             <P id="currentPageink"></P>
             <p id="currentTabUrl" class="section-content">Checking URL</p>
-        </div>
-
-        <h3 class="section-title">Email Header Detection</h3>
         
-        <div class="section">
+            
+        </div>
+        
+
+
+        <div id="Email" class="tabcontent">
+            <h3 class="section-title">Links in Header Detection</h3>
+            <div class="row">
+                <select id="selectOption" class="shared-field drop-down" placeholder="Links">
+                    <option value="">Links in header</option>
+                </select>
+                <button id="submitEmail" class="button-round email-url-submint" hidden>></button>
+            </div>
+            <br>
+            <h3 class="section-title">Email Header Detection</h3>
             <P id="emailHeader"></P>
             <p id="currentEmail" class="section-content">Checking Email</p>
-        </div>
         
+        </div>
     
     </div>
     <br>
-    <div class="grow"> 
-        <div class="spacer"></div>
-        <button id="customBtn" class="submit-button">Show custom options</button>
-        <div class="spacer"></div>
-    </div>
-    <br>
-    
-    <div id='customDetection' hidden >
-        <hr>
-        <br>   
-        <h3 class="section-title">Custom Detection</h3>
-        <div class="section">
-            <label for="urlInput" class="input-label"></label>
-            <input type="text" id="urlInput" name="urlInput" class="input-field" placeholder="Enter URL:">
-            <div class="grow"> 
-                <div class="spacer">Let's Check your Url</div>
-                <button id="submitUrl" class="submit-button">Submit Url</button>
-                
-            </div>
-            
-        </div>
-        <div class="section">
-            <label for="emailInput" class="input-label"></label>
-            <textarea id="emailInput" class="input-field" name="emailInput" rows="4" placeholder="Enter Email Header:" ></textarea>
-            
-            <div class="grow"> 
-                <div class="spacer">Let's Check your Email</div>
-                <button id="submitEmail" class="submit-button">Submit Header</button>
-                
-            </div>
-        </div>
-    </div>
 
     <script src="../static/js/popup.js"></script>
 

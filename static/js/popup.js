@@ -1,23 +1,21 @@
 // popup.js
 const base = 'https://phishing-detection-357f9186c0b4.herokuapp.com/';
+// const base = 'http://192.168.0.102:5000';
+
+const apiKey = 'aB3x8Yp2qR5sW9tZ';
 
 const url = base+'/urlpredictExt';
 const email = base+'/emailpredictExt';
 
 
-document.getElementById('customBtn').addEventListener('click', function() {
-    var customDetectionDiv = document.getElementById('customDetection');
-    if (customDetectionDiv) {
-        if (customDetectionDiv.hasAttribute('hidden')) {
-            customDetectionDiv.removeAttribute('hidden'); 
-            this.textContent = 'Hide custom options'; 
-        } else {
-            customDetectionDiv.setAttribute('hidden', true);
-            this.textContent = 'Show custom options'; 
-        }
-    }
-});
+// InitState Tab
+document.getElementById("urlsTab").addEventListener("click", function() {
+    openTab(0);
+  });
 
+document.getElementById("emailTab").addEventListener("click", function() {
+    openTab(1);
+  });
 
 
 function fetchData(url, dataToSend) {
@@ -40,26 +38,72 @@ function fetchData(url, dataToSend) {
     });
 }
 
+function onUrlBtnClick() {
+    const link = urlInput.value.trim(); // Get the URL value and trim whitespace
+    
+    var pattern = /^(http|https):\/\/[^ "]+$/;
 
-function getUrlResult(urlData)
-{
+    if(pattern.test(link)) {
+
+        let urlData = { 'url':link, 'key':apiKey };
+        document.getElementById('currentTabUrl').textContent = 'Checking Url';
+        getUrlResult(urlData);
+    } 
+    else{
+        alert('Invalid URL entered. Please enter a valid URL.');
+    }
+    
+}
+
+
+function onEmailBtnClick(){
+
+    var selectElement = document.getElementById("selectOption");
+    var selectedIndex = selectElement.selectedIndex;
+    var selectedOption = selectElement.options[selectedIndex];
+    var selectedValue = selectedOption.value;
+    let urlData = { 'url':selectedValue, 'key':apiKey };
+    
+    document.getElementById('currentEmail').textContent = 'Checking Url';
+
+    getUrlResult(urlData,'currentEmail');    
+}
+
+
+function getUrlResult(urlData,currentResult="currentTabUrl") {
     fetchData(url, urlData)
     .then(data => {
         // Handle the data returned from the server
-        document.getElementById('currentTabUrl').textContent = data['result'];
+        var currentTabUrl = document.getElementById(currentResult);
+        currentTabUrl.textContent = data['result'];
+        
+
+        if (data['result'].includes('Safe')) {
+            currentTabUrl.style.backgroundColor = "#006666";
+            
+        } else {
+            currentTabUrl.style.backgroundColor = "#993333";
+         }
     })
     .catch(error => {
         // Handle error
-        document.getElementById('currentTabUrl').textContent = 'Error: ' + error.message;
+        document.getElementById(currentResult).textContent = 'Error: ' + error.message;
+        
     });
 }
 
 
-function getEmailResult(emailData)
-{
+function getEmailResult(emailData) {
     fetchData(email, emailData)
     .then(data => {
-        document.getElementById('currentEmail').textContent = data['result'];
+        var currentEmail =document.getElementById('currentEmail')
+        currentEmail.textContent = data['result'];
+        
+        if (data['result'].includes('Safe')) {
+            currentEmail.style.backgroundColor = "#006666";
+        } else {
+            currentEmail.style.backgroundColor = "#993333";
+         }
     })
     .catch(error => {
         // Handle error
@@ -67,60 +111,51 @@ function getEmailResult(emailData)
     });
 }
 
-function urlCheck(tabs)
-{
+function urlCheck(tabs) {
     
     var currentTab = tabs[0];
     var currentTabUrl = currentTab.url;
-    submitButtonUrl = document.getElementById('submitUrl');
-    submitButtonEmail = document.getElementById('submitEmail');
-    let urlData = { 'url':currentTabUrl };
+    var submitButtonUrl = document.getElementById('submitUrl');
+    let urlData = { 'url':currentTabUrl, 'key':apiKey};
 
     document.getElementById('currentPageink').textContent = currentTabUrl.substring(0, 25)+"...";
-
     getUrlResult(urlData)
 
 
-    submitButtonUrl.addEventListener('click', function() {
-        const link = urlInput.value.trim(); // Get the URL value and trim whitespace
-        
-        let urlData = { 'url':link };
-        
-        document.getElementById('currentTabUrl').textContent = 'Checking Url';
-    
-        getUrlResult(urlData)
-    });
-
-    submitButtonEmail.addEventListener('click', function() {
-
-        var mail =  document.getElementById('emailInput').value;
-        
-        let emailData = { 'email':mail };
-        
-        document.getElementById('currentEmail').textContent = 'Checking Email';
-    
-        getEmailResult(emailData);
-        
-    });
+    submitButtonUrl.addEventListener('click', onUrlBtnClick);
 }
 
 
 function getEmailHeader(results) {
         
     var message = document.getElementById('emailHeader');
+    var submitButtonEmail = document.getElementById('submitEmail');
     var bodyHTML =results[0].result
     var parser = new DOMParser();
     var bodyDOM = parser.parseFromString(bodyHTML, 'text/html');
     var emailHeader = bodyDOM.querySelector('#raw_message_text');
-    
-    document.getElementById('emailInput').value = emailHeader.innerText;
-
-    
+    var selectOption = document.getElementById("selectOption")
     var match = emailHeader.innerText.match(/From:.*?(?=>)/);
+    var urlRegex = /(https?:\/\/[^\s]+)/gi;
+    var matches = emailHeader.innerText.match(urlRegex);
+    var submitEmail = document.getElementById('submitEmail');
+    let emailData = { 'email':emailHeader.innerText , 'key':apiKey};
+
+    submitEmail.hidden = false;
+    selectOption.innerHTML="";
     message.innerText =match+">";
-    let emailData = { 'email':emailHeader.innerText };
     getEmailResult(emailData);
 
+    if (matches) {
+        matches.forEach(function(url) {
+            var option = document.createElement("option");
+            option.innerText = url.substring(0, 20)+"..";
+            option.value = url;
+            selectOption.appendChild(option);
+        });
+    }
+
+    submitButtonEmail.addEventListener('click', onEmailBtnClick);
 }
 
 
@@ -135,8 +170,7 @@ function DOMtoString(selector) {
 }
 
 
-function emailCheck(tabs)
-{
+function emailCheck(tabs) {
     var message = document.getElementById('currentEmail');
     var activeTab = tabs[0];
     var activeTabId = activeTab.id;
@@ -150,20 +184,42 @@ function emailCheck(tabs)
     });
 }
 
-function main() {
+
+function openTab(evt) {
+    // Hide all tab contents
     
+    var urlBtn = document.getElementById("urlsTab");
+    var emailBtn = document.getElementById("emailTab");
+    var emailTab = document.getElementById("Email");
+    var urlTab = document.getElementById("URLs");
 
-    chrome.tabs.query({ active: true, currentWindow: true }).then(function (tabs) {
- 
-        urlCheck(tabs)
-        emailCheck(tabs)
+    if(evt === 0) {
+        emailBtn.classList.remove("active");
+        urlBtn.classList.add("active");
+        emailTab.hidden = true;
+        urlTab.hidden = false;
+        chrome.tabs.query({ active: true, currentWindow: true }).then(function (tabs) {
+            urlCheck(tabs)
+        })
+    }
+    else if(evt === 1) {
+        urlBtn.classList.remove("active");
+        emailBtn.classList.add("active");
+        urlTab.hidden = true;
+        emailTab.hidden = false;
+        chrome.tabs.query({ active: true, currentWindow: true }).then(function (tabs) {
+            emailCheck(tabs)    
+        })
+    }
+    
+}
+  
 
-    })
+function main() {
+    openTab(0)
 }
 
 
 
 // void Main()
 window.onload = main;
-
-
