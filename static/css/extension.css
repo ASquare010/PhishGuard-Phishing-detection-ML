@@ -30,7 +30,7 @@ body {
 
 .title {
     text-align: center;
-    font-size: 28px;
+    font-size: 33px;
     margin-bottom: 30px;
 }
 
@@ -49,9 +49,11 @@ body {
     font-size: 16px;
     outline: 1px solid rgba(255, 255, 255, 0.404);
     border-radius: 10px;
-    padding: 10px;
-    background-color: #fff;
-    color:#1f1f1f;
+    padding: 15px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    background-color: #141414;
+    color:white;
 }
 
 .input-label {
@@ -61,48 +63,117 @@ body {
 
 }
 
-.input-field {
-    width: 88%;
-    padding: 14px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin:10px;
-}
-
-.submit-button {
-    
-    padding: 10px;
-    font-size: 16px;
-    width: 50%;
-    background-color: #007bff;
-    color: #fff;
+.shared-field {
+    padding: 20px;
+    font-size: 18px;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: #141414;
+    box-shadow: 
+        inset 0px 0px 10px rgba(0, 0, 0, 0.3), /* Inner shadow */
+        inset 0px 0px 10px rgba(0, 0, 0, 0.3), /* Inner shadow */
+        inset 0px 0px 10px rgba(0, 0, 0, 0.3), /* Inner shadow */
+        inset 0px 0px 10px rgba(0, 0, 0, 0.3); /* Inner shadow */
+    border-radius: 12px;
+    color: white;
+}
+.input-field{
+    width: 90%;
 }
 
-.submit-button:hover {
-    background-color: #0056b3;
-}
-
-.grow
-{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    font-size: medium;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-}
-.spacer{
-    padding-top: 6px;
+.drop-down{
     flex-grow: 1;
 }
-#customBtn
+
+.tab {
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    margin-left: 5%;
+    justify-content: space-between;
+    background-color: #141414;
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 
+        inset 0px 0px 10px rgba(0, 0, 0, 0.3), /* Inner shadow */
+        inset 0px 0px 10px rgba(0, 0, 0, 0.3), /* Inner shadow */
+        inset 0px 0px 10px rgba(0, 0, 0, 0.3), /* Inner shadow */
+        inset 0px 0px 10px rgba(0, 0, 0, 0.3); /* Inner shadow */
+  }
+  
+  /* Style the buttons inside the tab */
+.tab button {
+    background-color: #141414;
+    color: white;
+    float: left;
+    width: 130px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 14px;
+    transition: 0.3s;
+    font-size: 23px;
+
+  }
+  
+  /* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: transparent;
+    box-shadow: 0px 0px 15px rgb(0, 0, 0); /* Outer glow */
+
+
+  }
+  
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #1F1F1F;
+    box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.3);
+}
+.stack{
+    margin-bottom: -40px;
+}
+
+.tabcontent {
+    padding: 6px 12px;
+    padding-bottom: 0px;
+    margin: 0px 12px;
+  }
+
+.button-round
 {
-    width: 80%;
+    padding: 10px;
+    height: 45px;
+    width: 45px;
+    font-size: 16px;
+    font-weight: bolder;
+    background-color: #1F1F1F;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.button-round:hover {
+    background-color: #0056b3;
+}
+.url-submint {
+    position: relative;
+    top: -54px;
+    left: 84%;
+}
+.email-url-submint{
+    background-color: #141414;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin-left: 10px;
+
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    align-items: center;
+
 }
