@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
 from phishingDetection.urlPishDect.modules.Prediction import PredictionURLS
 from phishingDetection.emailPishDect.modules.FeatureExtractionEmail import FeatureExtractionEmail
 from flask_cors import CORS
@@ -8,11 +14,14 @@ import warnings
 import joblib
 import os
 
+
+# In[ ]:
+
+
 def compress_pickle(input_file, output_file):
     with open(input_file, 'rb') as f_in:
         with gzip.open(output_file, 'wb') as f_out:
             f_out.write(f_in.read())
-
 
 def decompress_pickle(input_file, output_file):
     if not os.path.exists(output_file):
@@ -21,22 +30,32 @@ def decompress_pickle(input_file, output_file):
                 f_out.write(f_in.read())
  
 
+
+# In[ ]:
+
+
 def decompressFiles():
     decompress_pickle('phishingDetection/emailPishDect/model/best_model.gz','phishingDetection/emailPishDect/model/best_model.pkl')
     decompress_pickle('phishingDetection/urlPishDect/model/bestmodel.gz','phishingDetection/urlPishDect/model/bestmodel.pkl')
 
 
+# Email 
+
+# In[ ]:
+
+
 def loadPredict(predict):
-    
+
     loaded_model = joblib.load('phishingDetection/emailPishDect/model/best_model.pkl')
+    
     label = loaded_model.predict(predict)
 
     return label
 
 
-def predictionEmail(email_content):
-    
+def predictionEmail(email_content):    
     decompressFiles()
+
     obj=FeatureExtractionEmail(email_content)
     df = obj.df
     loaded_scaler = joblib.load('phishingDetection/emailPishDect/model/scaler_model.joblib')
@@ -47,26 +66,43 @@ def predictionEmail(email_content):
     return prad
 
 
+# Urls
+
+# In[ ]:
+
 
 def predictionURLS( urls=[]):
-    
     warnings.filterwarnings("ignore", category=UserWarning, message="Trying to unpickle estimator.*from version.*when using version.*")  
+    
     decompressFiles()
+
     obj = PredictionURLS(urls)
 
     return obj.resultOutput
 
 
-
+# In[ ]:
 
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
+
+# Api Key
+
+# In[ ]:
+
+
 VALID_API_KEYS = ['aB3x8Yp2qR5sW9tZ']
 
 def verify_api_key(api_key):
     return api_key in VALID_API_KEYS
+
+
+# For Website API Calls
+
+# In[ ]:
+
 
 @app.route('/')
 def home():
@@ -80,6 +116,7 @@ def urlpredict():
     
     url_result = predictionURLS([url])
 
+    # Render the result template with the prediction result
     return render_template('index.html', url_result=url_result)
 
 
@@ -87,16 +124,18 @@ def urlpredict():
 
 @app.route('/emailpredict', methods=['POST'])
 def emailpredict():
-    
+
     email = request.form.get('email', '')
     
     email_result = predictionEmail(email)
 
+    # Render the result template with the prediction result
     return render_template('index.html', email_result=email_result)
 
 
+# For Extention API Calls
 
-
+# In[ ]:
 
 
 @app.route('/urlpredictExt', methods=['POST'])
@@ -139,7 +178,6 @@ def emailpredictExt():
         result = 'Safe'
     # Render the result template with the prediction result
     return {"result": f"Email Result: {result}"}
-
 
 
 if __name__ == '__main__':
