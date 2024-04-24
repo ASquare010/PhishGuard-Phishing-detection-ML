@@ -1,5 +1,5 @@
 // popup.js
-const base = 'https://phishing-detection-357f9186c0b4.herokuapp.com/';
+const base = 'https://phishing-detection-via-ml-654532c3f1f5.herokuapp.com/';
 // const base = 'http://192.168.0.102:5000';
 
 const apiKey = 'aB3x8Yp2qR5sW9tZ';

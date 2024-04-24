@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[67]:
 
 
 from phishingDetection.urlPishDect.modules.Prediction import PredictionURLS
 from phishingDetection.emailPishDect.modules.FeatureExtractionEmail import FeatureExtractionEmail
 from flask_cors import CORS
 from flask import Flask,render_template, request,jsonify
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
+
 
 import gzip
 import warnings
@@ -15,7 +17,19 @@ import joblib
 import os
 
 
-# In[ ]:
+# In[68]:
+
+
+app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
+
+app.secret_key = 'kP6w2Xr8vN3sQ7tT'
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+
+
+# In[69]:
 
 
 def compress_pickle(input_file, output_file):
@@ -31,7 +45,7 @@ def decompress_pickle(input_file, output_file):
  
 
 
-# In[ ]:
+# In[70]:
 
 
 def decompressFiles():
@@ -41,7 +55,7 @@ def decompressFiles():
 
 # Email 
 
-# In[ ]:
+# In[71]:
 
 
 def loadPredict(predict):
@@ -68,7 +82,7 @@ def predictionEmail(email_content):
 
 # Urls
 
-# In[ ]:
+# In[72]:
 
 
 def predictionURLS( urls=[]):
@@ -81,19 +95,30 @@ def predictionURLS( urls=[]):
     return obj.resultOutput
 
 
-# In[ ]:
-
-
-app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
-
-
 # Api Key
 
-# In[ ]:
+# In[73]:
 
 
 VALID_API_KEYS = ['aB3x8Yp2qR5sW9tZ']
+ADMIN_USER_NAME = "admin"
+ADMIN_PASSWORD = "admin"
+
+
+class User(UserMixin):
+    def __init__(self, id):
+        self.id = id
+
+@login_manager.user_loader
+def load_user(user_id):
+    # This callback is used to reload the user object from the user ID stored in the session
+    return User(user_id)
+
+# Replace this with your actual user authentication logic
+def authenticate(username, password):
+    if username == ADMIN_USER_NAME and password == ADMIN_PASSWORD:
+        return User(1)
+    return None
 
 def verify_api_key(api_key):
     return api_key in VALID_API_KEYS
@@ -101,7 +126,7 @@ def verify_api_key(api_key):
 
 # For Website API Calls
 
-# In[ ]:
+# In[74]:
 
 
 @app.route('/')
@@ -109,33 +134,78 @@ def home():
     return render_template('index.html')
 
 
+# Login endpoint
+@app.route('/login', methods=['POST'])
+def login():
+    username = request.form.get('username')
+    password = request.form.get('password')
+    user = authenticate(username, password)
+    if user:
+        login_user(user)
+        return render_template('admin-page.html')
+    else:
+        return 'Invalid credentials'
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return render_template('index.html')
+
+
+# For Admin API Calls
+
+# In[75]:
+
+
+@app.route('/train', methods=['POST'])
+@login_required
+def train():
+    data = request.json
+    train = data.get('train', '')
+
+    print(f"train-> {train}")
+    return {"result": f"{train} has started Traning "}
+
+
+
+
 @app.route('/urlpredict', methods=['POST'])
+@login_required
 def urlpredict():
     
-    url = request.form.get('url', '')
-    
+    data = request.json
+    url = data.get('data', '')
+    result = 'Phishing'
+
     url_result = predictionURLS([url])
 
-    # Render the result template with the prediction result
-    return render_template('index.html', url_result=url_result)
+    if(url_result[9] == '0'):
+        result = 'Safe'
 
+    return {"result": f"Current Url Result: {result}"}
 
 
 
 @app.route('/emailpredict', methods=['POST'])
+@login_required
 def emailpredict():
 
-    email = request.form.get('email', '')
+    data = request.json
+    email = data.get('data', '')
+    result = 'Phishing'
     
     email_result = predictionEmail(email)
-
-    # Render the result template with the prediction result
-    return render_template('index.html', email_result=email_result)
+    
+    if(email_result[0] == 0):
+        result = 'Safe'
+ 
+    return {"result": f"Email Result: {result}"}
 
 
 # For Extention API Calls
 
-# In[ ]:
+# In[76]:
 
 
 @app.route('/urlpredictExt', methods=['POST'])
@@ -144,14 +214,14 @@ def urlpredictExt():
     data = request.json
     url = data.get('url', '')
     api_key = data.get('key', '')
-    
+    result = 'Phishing'
+
     # Check if the API key is valid
     if not verify_api_key(api_key):
         return jsonify({"result": "Invalid API key"})
     
     url_result = predictionURLS([url])
 
-    result = 'Phishing'
     if(url_result[9] == '0'):
         result = 'Safe'
 
@@ -164,6 +234,7 @@ def emailpredictExt():
     data = request.json
     email = data.get('email', '')
     api_key = data.get('key', '')
+    result = 'Phishing'
     
     # Check if the API key is valid
     if not verify_api_key(api_key):
@@ -171,15 +242,26 @@ def emailpredictExt():
 
     email_result = predictionEmail(email)
     
-    print(email_result)
 
-    result = 'Phishing'
     if(email_result[0] == 0):
         result = 'Safe'
     # Render the result template with the prediction result
     return {"result": f"Email Result: {result}"}
 
 
+
+# In[77]:
+
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
+
+
+# Run this to convert .ipynb to .py for deployment only
+
+# In[ ]:
+
+
+# !jupyter nbconvert --to script main.ipynb
+

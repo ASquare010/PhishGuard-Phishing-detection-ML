@@ -18,17 +18,7 @@
       }
     },
     
-    "content_scripts": [
-      {
-        "matches": ["https://mail.google.com/*"],
-        "js": ["static/js/contentScript.js"]
-      }
-    ],
   
-
-    "background": {
-      "service_worker": "static/js/background.js"
-    },
     "icons": {
         "128": "static/assets/icon128.png"
     }
