@@ -1,77 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phishing  Detection</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <title>Admin Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
-
 <body>
-
-        <div class="appabar">
-            <h1 class="titel">Cybersecurity X Ai </h1>
-        </div>
-
-        <div class="urlRow" >
-            
-            <div class="spacer"></div>
-            <div class="urlForm">
-
-                <form  action="/urlpredict" method="post">
-                    <label for="url">Enter URL:</label>
-                    <textarea id="url" name="url" rows="4" cols="50"></textarea>
-                    <br>
-                    <input type="submit" value="Submit">
-                </form>
-
-            </div>
-
-            <div class="spacer"></div>
-            <div class="urlResult">
-                <div class="urlBox">
-                    <label >Url Result:</label>
-                    <p class="url_result"> {{ url_result }} </p>
-                </div>
-            </div>
-            
-            <div class="spacer"></div>
-
-        </div>
-
-
-
-
-
-        <div class="urlRow" >
-            
-            <div class="spacer"></div>
-            <div class="urlForm">
-
-                <form  action="/emailpredict" method="post">
-                    <label for="email">Enter Email Header:</label>
-                    <textarea id="email" name="email" rows="4" cols="50"></textarea>
-                    <br>
-                    <input type="submit" value="Submit">
-                </form>
-
-            </div>
-
-            <div class="spacer"></div>
-            <div class="urlResult">
-                <div class="urlBox">
-                    <label >Email Result:</label>
-                    <p class="url_result"> {{ email_result }} </p>
-                </div>
-            </div>
-            
-            <div class="spacer"></div>
-
-        </div>
-
-    </body>
-
-
+    <div class="login-container">
+        <form class="login-form" action="/login" method="post" >
+            <h1>&nbsp;Admin Page</h1>
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
 </html>

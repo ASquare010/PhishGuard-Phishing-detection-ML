@@ -1,0 +1,138 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    margin: 0;
+    color: white;
+    padding: 0;
+}
+
+.centerBox{
+    background-color: #1F1F1F;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 20px;
+}
+.text-input{
+    width: 87%;
+    padding: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #141414;
+    box-shadow:inset 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #fff;
+}
+
+.round-button {
+    position: relative;
+    top: -66px;
+    left: 82%;
+    padding: 10px;
+    height: 45px;
+    width: 45px;
+    font-size: 16px;
+    font-weight: bolder;
+    background-color: #1F1F1F;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.round-button:hover {
+    background-color: #006666;
+}   
+.stack{
+    margin-bottom: -36px;
+}
+
+.result {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    background-color: #141414;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 20px;
+    margin-top: 15px;
+    color: #757575;
+}
+
+.spacer
+{
+    flex-grow: 1;
+}
+
+.appabar
+{
+    display: flex;
+    position: absolute;
+    top: 0;
+    justify-content: space-between;
+    display: flex;
+    background-color: #1F1F1F;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+
+}
+.high-light-Text
+{
+    padding-left: 5px;
+    font-weight: bold;
+    font-size: larger;
+}
+.titel{
+    padding-left: 50px;
+    color: white;
+}
+
+.row
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center ;
+}
+
+.subBox{
+    padding: 10px;
+}
+.boxBtn{
+    width: 300px;
+    padding: 20px;
+    margin-left: 30px;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: large;
+}
+.boxBtn:hover {
+    background-color: #45a049;
+}
+
+.logout
+{
+    text-decoration: none;
+    width: 60px;
+    margin-right: 20px;
+    text-align: center;
+    padding: 17px;
+
+}

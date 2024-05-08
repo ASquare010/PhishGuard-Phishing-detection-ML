@@ -1,0 +1,1941 @@
+email,label
+"Delivered-To: awaisamin09@gmail.com
+Received: by 2002:a05:6840:9aa4:b0:17c6:483f:10d5 with SMTP id g4csp1062537nly;
+        Sat, 27 Apr 2024 09:28:57 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHBTsB+3AQXKu+8Y+qthxFE7j3JgnQPo7vv3lTtNwjmWgInlz4mCJ/2kdYFZtvwmOaMg7d5
+X-Received: by 2002:a05:620a:2951:b0:790:c69a:d3f3 with SMTP id n17-20020a05620a295100b00790c69ad3f3mr1866616qkp.15.1714235337274;
+        Sat, 27 Apr 2024 09:28:57 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1714235337; cv=none;
+        d=google.com; s=arc-20160816;
+        b=jwxiRGqH78rYuPe9zWAgdYjOME3Asa2KCvAFwaNoMvCnC9/SRHFu8pKNrzANz38GCC
+         VAkhLptLuR5PyEMcj7vDEDLuBtgHaWOx07zSeYsowrzOw1hKuUI4SmGEll+A8m31NuQZ
+         JV5qJ+iErpoYWLPGv4HPuU4WPNIYcpcihIhWTDVxTi93otGgXN1m/HiJ7PD060NNqr4p
+         Sg0RL6/hOukFwa/uC+eOF6S15CtaCp0YZk0r0blFFTMgz76KnQ8cBNMuhyqZKy+pnhRl
+         Gs4ics8vG1P4ddJuw5agqwzit5zUJgplJGZuRVqBMK0VeV9L+VPmNG6MtloK27dxGBRv
+         j/vA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:content-transfer-encoding:mime-version
+         :subject:to:from:dkim-signature:dkim-signature;
+        bh=U7GfWtbHR/nBrbFcwZpssra7ezg248H73MkgrxV9Sj0=;
+        fh=ynGQ1apFrYQJopxq1S43aauLBxuPPzO5GhVh7wL0hug=;
+        b=cFiq4UkUn+Y0jN+IAejH1cT9GdEOrZDF4Dclc/gsxigSshOgkUZ3jljCzNlCsb/aWG
+         QjORrGDwK0KmB8oZwNUhMzCZU0UREwFkWuuwxg5v0WRMRQa8Leh+ZsJfC0GzeTLXDUoB
+         uhAMdlK6g4Wnt0X1orA7RiKeqRSJSmpNwSkmYfr+tP/PoIV9RqKPT9j6gnxfDVOj/OnK
+         gZi6S1IxPfAp24QY/SB1aqOp8vZFehQHH8oc83lXqV7xyJG8C91QyUBZs/GCCvleLjZs
+         aal+klBqJHHRldXl1A+rgeYEQ3DyqJ1pf6uCF+gG06DNV5staflLesSqfMBIb9Ua27bm
+         S9JQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@reddit.com header.s=2ybsbk45dtwlgerewyfzx5qt442lak5j header.b=NvlpxAmH;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Yurm+Uyz;
+       spf=pass (google.com: domain of 0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com designates 23.251.229.109 as permitted sender) smtp.mailfrom=0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=reddit.com
+Return-Path: <0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com>
+Received: from e229-109.smtp-out.amazonses.com (e229-109.smtp-out.amazonses.com. [23.251.229.109])
+        by mx.google.com with ESMTPS id y5-20020ae9f405000000b00787b85281e7si22141205qkl.714.2024.04.27.09.28.56
+        for <awaisamin09@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 27 Apr 2024 09:28:57 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com designates 23.251.229.109 as permitted sender) client-ip=23.251.229.109;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@reddit.com header.s=2ybsbk45dtwlgerewyfzx5qt442lak5j header.b=NvlpxAmH;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Yurm+Uyz;
+       spf=pass (google.com: domain of 0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com designates 23.251.229.109 as permitted sender) smtp.mailfrom=0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=reddit.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=2ybsbk45dtwlgerewyfzx5qt442lak5j; d=reddit.com; t=1714235336; h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date; bh=U7GfWtbHR/nBrbFcwZpssra7ezg248H73MkgrxV9Sj0=; b=NvlpxAmHKTLzyb06IVfQ4Xfy/+9wzXKe/9aylmenzVlM++O3L45hRrMZnYVKajhc 6K/sb7tlNv0YVTTJoAEixZGEZi5YEX41CgJUaBMmyrvVm0M7M2YavEwYAKky4rFDm3N zz/che2rm/XKG9olhKcRICHxGpy92bizqIEso384=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1714235336; h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:Feedback-ID; bh=U7GfWtbHR/nBrbFcwZpssra7ezg248H73MkgrxV9Sj0=; b=Yurm+Uyzp6ntFJpBBcc6Q660LcoPMWu1A+XmqAPzO+INUdTEV9VXMozx4af4x9Fq wy3gTEJtsM6dbfPHnH4s95QePUJ+MBlc0Ci/ybpsnZqgi2s6fkgEgYJJ8hCuvENAvW1 CQa2QgT4uCBdbnsOtQhcRebO7fXdFQeWfGfctqcE=
+From: Reddit <noreply@reddit.com>
+To: awaisamin09@gmail.com
+Subject: Reddit password reset
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Message-ID: <0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@email.amazonses.com>
+Date: Sat, 27 Apr 2024 16:28:56 +0000
+Feedback-ID: 1.us-east-1.UqlFplRllIQtiw+Kq2b87y7uRSu9p66fMici2AQNsMU=:AmazonSES
+X-SES-Outgoing: 2024.04.27-23.251.229.109
+
+<!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Transitional//EN"" ""http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"">
+<html xmlns=3D""http://www.w3.org/1999/xhtml"" xmlns:v=3D""urn:schemas-microso=
+ft-com:vml"" xmlns:o=3D""urn:schemas-microsoft-com:office:office"">
+<head>
+<!-- MonitorCampaignID: recover_password -->
+<!--[if gte mso 9]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<meta http-equiv=3D""Content-type"" content=3D""text/html; charset=3Dutf-8"">
+<meta name=3D""viewport"" content=3D""width=3Ddevice-width, initial-scale=3D1,=
+ maximum-scale=3D1"">
+<meta http-equiv=3D""X-UA-Compatible"" content=3D""IE=3Dedge"">
+<meta name=3D""format-detection"" content=3D""date=3Dno"">
+<meta name=3D""format-detection"" content=3D""address=3Dno"">
+<meta name=3D""format-detection"" content=3D""telephone=3Dno"">
+<meta name=3D""x-apple-disable-message-reformatting"">
+<!--[if !mso]><!-->
+<!--<![endif]-->
+<title>Email Template</title>
+<!--[if gte mso 9]>
+<style type=3D""text/css"" media=3D""all"">
+sup { font-size: 100% !important; }
+</style>
+<![endif]-->
+<style type=3D""text/css"" media=3D""screen"">
+body { padding:0 !important; margin:0 auto !important; display:block !impor=
+tant; min-width:100% !important; width:100% !important; background:#ffffff;=
+ -webkit-text-size-adjust:none }
+a { color:#313e42; text-decoration:none }
+p { padding:0 !important; margin:0 !important }
+img { margin: 0 !important; -ms-interpolation-mode: bicubic; /* Allow smoot=
+her rendering of resized image in Internet Explorer */ }
+a[x-apple-data-detectors] {
+color: inherit !important;
+text-decoration: inherit !important;
+font-size: inherit !important;
+font-family: inherit !important;
+font-weight: inherit !important;
+line-height: inherit !important;
+}
+.btn-12 a { display: block; padding: 4px; text-decoration: none; }
+.btn-14 a { display: block; padding: 8px; text-decoration: none; }
+.btn-14-4 a { display: block; padding: 8px; text-decoration: none; }
+.l-red a { color: #ff0000; }
+/* Mobile styles */
+@media only screen and (max-device-width: 480px), only screen and (max-widt=
+h: 480px) {
+.mpx-16 { padding-left: 16px !important; padding-right: 16px !important; }
+.mpb-48 { padding-bottom: 48px !important; }
+.mfz-16 { font-size: 16px !important; }
+.mlh-18 { line-height: 18px !important; }
+.mpb-28 { padding-bottom: 28px !important; }
+.mfz-14 { font-size: 14px !important; }
+.mlh-16 { line-height: 16px !important; }
+.mpb-12 { padding-bottom: 12px !important; }
+.mpt-8 { padding-top: 8px !important; }
+.mpb-44 { padding-bottom: 44px !important; }
+.mpb-27 { padding-bottom: 27px !important; }
+.mpt-21 { padding-top: 21px !important; }
+.mpb-34 { padding-bottom: 34px !important; }
+.mpb-17 { padding-bottom: 17px !important; }
+.mpb-20 { padding-bottom: 20px !important; }
+.mpt-16 { padding-top: 16px !important; }
+.mpt-34 { padding-top: 34px !important; }
+.mpx-12 { padding-left: 12px !important; padding-right: 12px !important; }
+.mfz-12 { font-size: 12px !important; }
+.mpb-8 { padding-bottom: 8px !important; }
+u + .body .gwfw { width:100% !important; width:100vw !important; }
+.td,
+.m-shell { width: 100% !important; min-width: 100% !important; }
+.mt-left { text-align: left !important; }
+.mt-center { text-align: center !important; }
+.mt-right { text-align: right !important; }
+.me-left { margin-right: auto !important; }
+.me-center { margin: 0 auto !important; }
+.me-right { margin-left: auto !important; }
+.h-auto { height: auto !important; }
+.w-auto { width: auto !important; }
+.fluid-img img { width: 100% !important; max-width: 100% !important; height=
+: auto !important; }
+.column,
+.column-top,
+.column-dir,
+.column-dir-top { float: left !important; width: 100% !important; display: =
+block !important; }
+.m-hide { display: none !important; width: 0 !important; height: 0 !importa=
+nt; font-size: 0 !important; line-height: 0 !important; min-height: 0 !impo=
+rtant; }
+.m-block { display: block !important; }
+/*Width*/
+.w-15 { width: 15px !important; }
+.w-8 { width: 8px !important; height: auto !important; }
+.w-12 { width: 12px !important; height: auto !important; }
+.w-60 { width: 60px !important; height: auto !important; }
+.w-54 { width: 54px !important; height: auto !important; }
+.w-54 img { width: 54px !important; height: auto !important; }
+.w-104 { width: 104px !important; height: auto !important; }
+.w-104 img { width: 104px !important; height: auto !important; }
+.w-114 { width: 114px !important; height: auto !important; }
+.w-114 img { width: 114px !important; height: auto !important; }
+.btn-14-4 { font-size: 12px !important; line-height: 16px !important; }
+.btn-14-4 a { padding: 4px !important; }
+.w-2p { width: 2% !important; }
+.w-32p { width: 32% !important; }
+.w-49p { width: 49% !important; }
+.w-50p { width: 50% !important; }
+.w-100p { width: 100% !important; }
+/*Text*/
+}
+</style>
+</head>
+<body class=3D""body"" style=3D""padding:0 !important; margin:0 auto !importan=
+t; display:block !important; min-width:100% !important; width:100% !importa=
+nt; background:#ffffff; -webkit-text-size-adjust:none;"">
+<center>
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"" styl=
+e=3D""margin: 0; padding: 0; width: 100%;"" bgcolor=3D""#ffffff"" class=3D""gwfw=
+"">
+<tr>
+<td style=3D""margin: 0; padding: 0; width: 100%;"" align=3D""center"">
+<table width=3D""600"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"" class=
+=3D""m-shell"">
+<tr>
+<td class=3D""td"" style=3D""width:600px; min-width:600px; font-size:0pt; line=
+-height:0pt; padding:0; margin:0; font-weight:normal;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<!-- Reset your password -->
+<tr>
+<td class=3D""img"" style=3D""font-size:0pt; line-height:0pt; text-align:left;=
+"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""px-32 mpx-16"" style=3D""padding-left: 32px; padding-right: 32px=
+;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""pt-25 pt-16 pb-28 mpb-20"" style=3D""padding-top: 16px; padding-=
+bottom: 28px;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""pb-34 mpb-28"" style=3D""padding-bottom: 34px;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""img w-104"" width=3D""112"" style=3D""font-size:0pt; line-height:0=
+pt; text-align:left;""><a href=3D""https://www.reddit.com/"" target=3D""_blank""=
+><img src=3D""https://www.redditstatic.com/emaildigest/logo@2x.png"" width=3D=
+""112"" height=3D""39"" border=3D""0"" alt=3D"""" /></a></td>
+<td class=3D""img"" width=3D""20"" style=3D""font-size:0pt; line-height:0pt; tex=
+t-align:left;""></td>
+<td class=3D""img"" style=3D""font-size:0pt; line-height:0pt; text-align:left;=
+"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td align=3D""right"">
+<table border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+
+<tr>
+<td class=3D""img"" width=3D""16"" valign=3D""top"" style=3D""font-size:0pt; line-=
+height:0pt; text-align:left;""><img src=3D""https://styles.redditmedia.com/t5=
+_98jz2h/styles/profileIcon_snoo-nftv2_bmZ0X2VpcDE1NToxMzdfZWI5NTlhNzE1ZGZmZ=
+mU2ZjgyZjQ2MDU1MzM5ODJjNDg1OWNiMTRmZV8xMTg4OTQ0MQ_rare_f6f3fd99-25cd-40ec-9=
+4d3-8ab11a47f784-headshot.png?crop=3D256:256,smart&amp;height=3D256&amp;wid=
+th=3D256&amp;s=3D75f5e24c16cc7ec3faff5a49d883cd1a6329df02"" width=3D""16"" hei=
+ght=3D""16"" border=3D""0"" alt=3D"""" /></td>
+<td class=3D""img"" width=3D""4"" style=3D""font-size:0pt; line-height:0pt; text=
+-align:left;""></td>
+<td class=3D""text-12 c-grey-4"" style=3D""font-size:12px; line-height:14px; f=
+ont-family:Helvetica, Arial, sans-serif; text-align:left; min-width:auto !i=
+mportant; color:#7a9299;""><a href=3D""https://www.reddit.com/user/A_Squareo1=
+o/?correlation_id=3D4ce6361e-fc06-42d4-aa97-9c3053faa068&amp;ref=3Drecover_=
+password&amp;ref_campaign=3Drecover_password&amp;ref_source=3Demail"" target=
+=3D""_blank"" class=3D""link c-grey-4"" style=3D""text-decoration:none; color:#7=
+a9299;""><span class=3D""link c-grey-4"" style=3D""text-decoration:none; color:=
+#7a9299;"">u/A_Squareo1o</span></a></td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""text-16 mfz-14 mlh-16 pb-28 mpb-20"" style=3D""font-size:16px; l=
+ine-height:18px; color:#000000; font-family:Helvetica, Arial, sans-serif; t=
+ext-align:left; min-width:auto !important; padding-bottom: 28px;"">
+
+Hi A_Squareo1o,
+
+<br /><br />
+
+Thanks for requesting a password reset. To create a new password, just use =
+the button below.
+</td>
+</tr>
+<tr>
+<td class=3D""pb-34 mpb-28"" align=3D""center"" style=3D""padding-bottom: 34px;""=
+>
+<table width=3D""214"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""btn-14"" bgcolor=3D""#0079d3"" style=3D""border-radius: 4px; font-=
+size:14px; line-height:18px; mso-padding-alt:8px; color:#ffffff; font-famil=
+y:Helvetica, Arial, sans-serif; text-align:center; min-width:auto !importan=
+t;""><a href=3D""https://www.reddit.com/passwordrecovery?%24deep_link=3Dtrue&=
+amp;correlation_id=3D4ce6361e-fc06-42d4-aa97-9c3053faa068&amp;ref=3Drecover=
+_password&amp;ref_campaign=3Drecover_password&amp;ref_source=3Demail&amp;to=
+ken=3Drpt_TsIWAMlATimQpm1ddjkUCA"" target=3D""_blank"" class=3D""link c-white"" =
+style=3D""display: block; padding: 8px; text-decoration:none; color:#ffffff;=
+""><span class=3D""link c-white"" style=3D""text-decoration:none; color:#ffffff=
+;""><strong>Reset Password</strong></span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""text-16 mfz-14 mlh-16 pb-28 mpb-20"" style=3D""font-size:16px; l=
+ine-height:18px; color:#000000; font-family:Helvetica, Arial, sans-serif; t=
+ext-align:left; min-width:auto !important; padding-bottom: 28px;"">
+If you didn=E2=80=99t make this request, you can ignore this email and carr=
+y on as usual. If you need any more help logging in to your Reddit account,=
+ check out our <a href=3D""https://www.reddithelp.com/en/categories/privacy-=
+security/account-security?$web_only=3Dtrue"" target=3D""_blank"" class=3D""link=
+ c-blue"" style=3D""text-decoration:none; color:#006cbf;""><span class=3D""link=
+ c-blue"" style=3D""text-decoration:none; color:#006cbf;"">Account Security FA=
+Qs</span></a> or <a href=3D""https://www.reddithelp.com/en/submit-request?$w=
+eb_only=3Dtrue"" target=3D""_blank"" class=3D""link c-blue"" style=3D""text-decor=
+ation:none; color:#006cbf;""><span class=3D""link c-blue"" style=3D""text-decor=
+ation:none; color:#006cbf;"">contact us</span></a>.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END Reset your password -->
+<!-- Footer - 1 -->
+<tr>
+<td class=3D""pt-48 mpt-16 mpt-34"" style=3D""padding-top: 48px;"" bgcolor=3D""#=
+f2f5f6"">
+<table width=3D""100%"" cellspacing=3D""0"" cellpadding=3D""0"" border=3D""0"">
+<tbody>
+<tr>
+<td class=3D""img-center pb-28 w-104 mpb-20"" style=3D""font-size:0pt; line-he=
+ight:0pt; text-align:center; padding-bottom: 28px;""><a href=3D""https://www.=
+reddit.com/"" target=3D""_blank""><img src=3D""https://www.redditstatic.com/ema=
+ildigest/logo@2x.png"" alt=3D"""" width=3D""115"" height=3D""40"" border=3D""0""></a=
+></td>
+</tr>
+<tr>
+<td class=3D""pb-20"" style=3D""padding-bottom: 20px;"" align=3D""center"">
+<table cellspacing=3D""0"" cellpadding=3D""0"" border=3D""0"">
+<tbody>
+<tr>
+<td class=3D""img w-114"" style=3D""font-size:0pt; line-height:0pt; text-align=
+:left;"" valign=3D""top""><a href=3D""https://apps.apple.com/us/app/reddit/id10=
+64216828"" target=3D""_blank""><img src=3D""https://www.redditstatic.com/emaild=
+igest/app_store_8_8.png"" alt=3D"""" width=3D""124"" height=3D""37"" border=3D""0"">=
+</a></td>
+<td class=3D""img w-8"" style=3D""font-size:0pt; line-height:0pt; text-align:l=
+eft;"" width=3D""10""></td>
+<td class=3D""img w-114"" style=3D""font-size:0pt; line-height:0pt; text-align=
+:left;"" valign=3D""top""><a href=3D""https://play.google.com/store/apps/detail=
+s?id=3Dcom.reddit.frontpage"" target=3D""_blank""><img src=3D""https://www.redd=
+itstatic.com/emaildigest/google_play_8_8.png"" alt=3D"""" width=3D""124"" height=
+=3D""37"" border=3D""0""></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""pb-20 px-24 mpx-12 mpb-20"" style=3D""padding-bottom: 20px; padd=
+ing-left: 24px; padding-right: 24px;"">
+<table width=3D""100%"" cellspacing=3D""0"" cellpadding=3D""0"" border=3D""0"">
+<tbody>
+<tr>
+<td class=3D""text-16-8 mfz-12 mlh-18 a-center"" style=3D""font-size:16px; lin=
+e-height:18px; color:#687981; font-family:Helvetica, Arial, sans-serif; min=
+-width:auto !important; text-align:center;"">
+You are receiving this email because a Reddit account, u/A_Squareo1o, is re=
+gistered to this email address.
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""text-16-8 mfz-12 mlh-18 c-dark-8-8 a-center px-24 mpx-12"" styl=
+e=3D""font-size:16px; line-height:18px; font-family:Helvetica, Arial, sans-s=
+erif; min-width:auto !important; color:#222222; text-align:center; padding-=
+left: 24px; padding-right: 24px;"">548 Market St., #16093, San Francisco, CA=
+ 94104=E2=80=935401</td>
+</tr>
+<tr>
+<td class=3D""fluid-img"" style=3D""font-size:0pt; line-height:0pt; text-align=
+:left;""><img src=3D""https://www.redditstatic.com/emaildigest/footer_logo_8_=
+8.png"" alt=3D"""" width=3D""600"" height=3D""115"" border=3D""0""></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- END Footer - 1 -->
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</center>
+<img alt=3D"""" src=3D""https://ql9whnmm.r.us-east-1.awstrack.me/I0/0100018f20=
+6366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000/RMc52NSTU1DwKI3LRUrMHOX1=
+hX0=3D371"" style=3D""display: none; width: 1px; height: 1px;"">
+</body>
+</html>
+",0
+"Delivered-To: awaisamin09@gmail.com
+Received: by 2002:a05:6840:9aa4:b0:17c6:483f:10d5 with SMTP id g4csp1062537nly;
+        Sat, 27 Apr 2024 09:28:57 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHBTsB+3AQXKu+8Y+qthxFE7j3JgnQPo7vv3lTtNwjmWgInlz4mCJ/2kdYFZtvwmOaMg7d5
+X-Received: by 2002:a05:620a:2951:b0:790:c69a:d3f3 with SMTP id n17-20020a05620a295100b00790c69ad3f3mr1866616qkp.15.1714235337274;
+        Sat, 27 Apr 2024 09:28:57 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1714235337; cv=none;
+        d=google.com; s=arc-20160816;
+        b=jwxiRGqH78rYuPe9zWAgdYjOME3Asa2KCvAFwaNoMvCnC9/SRHFu8pKNrzANz38GCC
+         VAkhLptLuR5PyEMcj7vDEDLuBtgHaWOx07zSeYsowrzOw1hKuUI4SmGEll+A8m31NuQZ
+         JV5qJ+iErpoYWLPGv4HPuU4WPNIYcpcihIhWTDVxTi93otGgXN1m/HiJ7PD060NNqr4p
+         Sg0RL6/hOukFwa/uC+eOF6S15CtaCp0YZk0r0blFFTMgz76KnQ8cBNMuhyqZKy+pnhRl
+         Gs4ics8vG1P4ddJuw5agqwzit5zUJgplJGZuRVqBMK0VeV9L+VPmNG6MtloK27dxGBRv
+         j/vA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:content-transfer-encoding:mime-version
+         :subject:to:from:dkim-signature:dkim-signature;
+        bh=U7GfWtbHR/nBrbFcwZpssra7ezg248H73MkgrxV9Sj0=;
+        fh=ynGQ1apFrYQJopxq1S43aauLBxuPPzO5GhVh7wL0hug=;
+        b=cFiq4UkUn+Y0jN+IAejH1cT9GdEOrZDF4Dclc/gsxigSshOgkUZ3jljCzNlCsb/aWG
+         QjORrGDwK0KmB8oZwNUhMzCZU0UREwFkWuuwxg5v0WRMRQa8Leh+ZsJfC0GzeTLXDUoB
+         uhAMdlK6g4Wnt0X1orA7RiKeqRSJSmpNwSkmYfr+tP/PoIV9RqKPT9j6gnxfDVOj/OnK
+         gZi6S1IxPfAp24QY/SB1aqOp8vZFehQHH8oc83lXqV7xyJG8C91QyUBZs/GCCvleLjZs
+         aal+klBqJHHRldXl1A+rgeYEQ3DyqJ1pf6uCF+gG06DNV5staflLesSqfMBIb9Ua27bm
+         S9JQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@reddit.com header.s=2ybsbk45dtwlgerewyfzx5qt442lak5j header.b=NvlpxAmH;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Yurm+Uyz;
+       spf=pass (google.com: domain of 0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com designates 23.251.229.109 as permitted sender) smtp.mailfrom=0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=reddit.com
+Return-Path: <0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com>
+Received: from e229-109.smtp-out.amazonses.com (e229-109.smtp-out.amazonses.com. [23.251.229.109])
+        by mx.google.com with ESMTPS id y5-20020ae9f405000000b00787b85281e7si22141205qkl.714.2024.04.27.09.28.56
+        for <awaisamin09@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 27 Apr 2024 09:28:57 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com designates 23.251.229.109 as permitted sender) client-ip=23.251.229.109;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@reddit.com header.s=2ybsbk45dtwlgerewyfzx5qt442lak5j header.b=NvlpxAmH;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Yurm+Uyz;
+       spf=pass (google.com: domain of 0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com designates 23.251.229.109 as permitted sender) smtp.mailfrom=0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=reddit.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=2ybsbk45dtwlgerewyfzx5qt442lak5j; d=reddit.com; t=1714235336; h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date; bh=U7GfWtbHR/nBrbFcwZpssra7ezg248H73MkgrxV9Sj0=; b=NvlpxAmHKTLzyb06IVfQ4Xfy/+9wzXKe/9aylmenzVlM++O3L45hRrMZnYVKajhc 6K/sb7tlNv0YVTTJoAEixZGEZi5YEX41CgJUaBMmyrvVm0M7M2YavEwYAKky4rFDm3N zz/che2rm/XKG9olhKcRICHxGpy92bizqIEso384=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1714235336; h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:Feedback-ID; bh=U7GfWtbHR/nBrbFcwZpssra7ezg248H73MkgrxV9Sj0=; b=Yurm+Uyzp6ntFJpBBcc6Q660LcoPMWu1A+XmqAPzO+INUdTEV9VXMozx4af4x9Fq wy3gTEJtsM6dbfPHnH4s95QePUJ+MBlc0Ci/ybpsnZqgi2s6fkgEgYJJ8hCuvENAvW1 CQa2QgT4uCBdbnsOtQhcRebO7fXdFQeWfGfctqcE=
+From: Reddit <noreply@reddit.com>
+To: awaisamin09@gmail.com
+Subject: Reddit password reset
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Message-ID: <0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@email.amazonses.com>
+Date: Sat, 27 Apr 2024 16:28:56 +0000
+Feedback-ID: 1.us-east-1.UqlFplRllIQtiw+Kq2b87y7uRSu9p66fMici2AQNsMU=:AmazonSES
+X-SES-Outgoing: 2024.04.27-23.251.229.109
+
+<!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Transitional//EN"" ""http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"">
+<html xmlns=3D""http://www.w3.org/1999/xhtml"" xmlns:v=3D""urn:schemas-microso=
+ft-com:vml"" xmlns:o=3D""urn:schemas-microsoft-com:office:office"">
+<head>
+<!-- MonitorCampaignID: recover_password -->
+<!--[if gte mso 9]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<meta http-equiv=3D""Content-type"" content=3D""text/html; charset=3Dutf-8"">
+<meta name=3D""viewport"" content=3D""width=3Ddevice-width, initial-scale=3D1,=
+ maximum-scale=3D1"">
+<meta http-equiv=3D""X-UA-Compatible"" content=3D""IE=3Dedge"">
+<meta name=3D""format-detection"" content=3D""date=3Dno"">
+<meta name=3D""format-detection"" content=3D""address=3Dno"">
+<meta name=3D""format-detection"" content=3D""telephone=3Dno"">
+<meta name=3D""x-apple-disable-message-reformatting"">
+<!--[if !mso]><!-->
+<!--<![endif]-->
+<title>Email Template</title>
+<!--[if gte mso 9]>
+<style type=3D""text/css"" media=3D""all"">
+sup { font-size: 100% !important; }
+</style>
+<![endif]-->
+<style type=3D""text/css"" media=3D""screen"">
+body { padding:0 !important; margin:0 auto !important; display:block !impor=
+tant; min-width:100% !important; width:100% !important; background:#ffffff;=
+ -webkit-text-size-adjust:none }
+a { color:#313e42; text-decoration:none }
+p { padding:0 !important; margin:0 !important }
+img { margin: 0 !important; -ms-interpolation-mode: bicubic; /* Allow smoot=
+her rendering of resized image in Internet Explorer */ }
+a[x-apple-data-detectors] {
+color: inherit !important;
+text-decoration: inherit !important;
+font-size: inherit !important;
+font-family: inherit !important;
+font-weight: inherit !important;
+line-height: inherit !important;
+}
+.btn-12 a { display: block; padding: 4px; text-decoration: none; }
+.btn-14 a { display: block; padding: 8px; text-decoration: none; }
+.btn-14-4 a { display: block; padding: 8px; text-decoration: none; }
+.l-red a { color: #ff0000; }
+/* Mobile styles */
+@media only screen and (max-device-width: 480px), only screen and (max-widt=
+h: 480px) {
+.mpx-16 { padding-left: 16px !important; padding-right: 16px !important; }
+.mpb-48 { padding-bottom: 48px !important; }
+.mfz-16 { font-size: 16px !important; }
+.mlh-18 { line-height: 18px !important; }
+.mpb-28 { padding-bottom: 28px !important; }
+.mfz-14 { font-size: 14px !important; }
+.mlh-16 { line-height: 16px !important; }
+.mpb-12 { padding-bottom: 12px !important; }
+.mpt-8 { padding-top: 8px !important; }
+.mpb-44 { padding-bottom: 44px !important; }
+.mpb-27 { padding-bottom: 27px !important; }
+.mpt-21 { padding-top: 21px !important; }
+.mpb-34 { padding-bottom: 34px !important; }
+.mpb-17 { padding-bottom: 17px !important; }
+.mpb-20 { padding-bottom: 20px !important; }
+.mpt-16 { padding-top: 16px !important; }
+.mpt-34 { padding-top: 34px !important; }
+.mpx-12 { padding-left: 12px !important; padding-right: 12px !important; }
+.mfz-12 { font-size: 12px !important; }
+.mpb-8 { padding-bottom: 8px !important; }
+u + .body .gwfw { width:100% !important; width:100vw !important; }
+.td,
+.m-shell { width: 100% !important; min-width: 100% !important; }
+.mt-left { text-align: left !important; }
+.mt-center { text-align: center !important; }
+.mt-right { text-align: right !important; }
+.me-left { margin-right: auto !important; }
+.me-center { margin: 0 auto !important; }
+.me-right { margin-left: auto !important; }
+.h-auto { height: auto !important; }
+.w-auto { width: auto !important; }
+.fluid-img img { width: 100% !important; max-width: 100% !important; height=
+: auto !important; }
+.column,
+.column-top,
+.column-dir,
+.column-dir-top { float: left !important; width: 100% !important; display: =
+block !important; }
+.m-hide { display: none !important; width: 0 !important; height: 0 !importa=
+nt; font-size: 0 !important; line-height: 0 !important; min-height: 0 !impo=
+rtant; }
+.m-block { display: block !important; }
+/*Width*/
+.w-15 { width: 15px !important; }
+.w-8 { width: 8px !important; height: auto !important; }
+.w-12 { width: 12px !important; height: auto !important; }
+.w-60 { width: 60px !important; height: auto !important; }
+.w-54 { width: 54px !important; height: auto !important; }
+.w-54 img { width: 54px !important; height: auto !important; }
+.w-104 { width: 104px !important; height: auto !important; }
+.w-104 img { width: 104px !important; height: auto !important; }
+.w-114 { width: 114px !important; height: auto !important; }
+.w-114 img { width: 114px !important; height: auto !important; }
+.btn-14-4 { font-size: 12px !important; line-height: 16px !important; }
+.btn-14-4 a { padding: 4px !important; }
+.w-2p { width: 2% !important; }
+.w-32p { width: 32% !important; }
+.w-49p { width: 49% !important; }
+.w-50p { width: 50% !important; }
+.w-100p { width: 100% !important; }
+/*Text*/
+}
+</style>
+</head>
+<body class=3D""body"" style=3D""padding:0 !important; margin:0 auto !importan=
+t; display:block !important; min-width:100% !important; width:100% !importa=
+nt; background:#ffffff; -webkit-text-size-adjust:none;"">
+<center>
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"" styl=
+e=3D""margin: 0; padding: 0; width: 100%;"" bgcolor=3D""#ffffff"" class=3D""gwfw=
+"">
+<tr>
+<td style=3D""margin: 0; padding: 0; width: 100%;"" align=3D""center"">
+<table width=3D""600"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"" class=
+=3D""m-shell"">
+<tr>
+<td class=3D""td"" style=3D""width:600px; min-width:600px; font-size:0pt; line=
+-height:0pt; padding:0; margin:0; font-weight:normal;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<!-- Reset your password -->
+<tr>
+<td class=3D""img"" style=3D""font-size:0pt; line-height:0pt; text-align:left;=
+"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""px-32 mpx-16"" style=3D""padding-left: 32px; padding-right: 32px=
+;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""pt-25 pt-16 pb-28 mpb-20"" style=3D""padding-top: 16px; padding-=
+bottom: 28px;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""pb-34 mpb-28"" style=3D""padding-bottom: 34px;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""img w-104"" width=3D""112"" style=3D""font-size:0pt; line-height:0=
+pt; text-align:left;""><a href=3D""https://www.reddit.com/"" target=3D""_blank""=
+><img src=3D""https://www.redditstatic.com/emaildigest/logo@2x.png"" width=3D=
+""112"" height=3D""39"" border=3D""0"" alt=3D"""" /></a></td>
+<td class=3D""img"" width=3D""20"" style=3D""font-size:0pt; line-height:0pt; tex=
+t-align:left;""></td>
+<td class=3D""img"" style=3D""font-size:0pt; line-height:0pt; text-align:left;=
+"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td align=3D""right"">
+<table border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+
+<tr>
+<td class=3D""img"" width=3D""16"" valign=3D""top"" style=3D""font-size:0pt; line-=
+height:0pt; text-align:left;""><img src=3D""https://styles.redditmedia.com/t5=
+_98jz2h/styles/profileIcon_snoo-nftv2_bmZ0X2VpcDE1NToxMzdfZWI5NTlhNzE1ZGZmZ=
+mU2ZjgyZjQ2MDU1MzM5ODJjNDg1OWNiMTRmZV8xMTg4OTQ0MQ_rare_f6f3fd99-25cd-40ec-9=
+4d3-8ab11a47f784-headshot.png?crop=3D256:256,smart&amp;height=3D256&amp;wid=
+th=3D256&amp;s=3D75f5e24c16cc7ec3faff5a49d883cd1a6329df02"" width=3D""16"" hei=
+ght=3D""16"" border=3D""0"" alt=3D"""" /></td>
+<td class=3D""img"" width=3D""4"" style=3D""font-size:0pt; line-height:0pt; text=
+-align:left;""></td>
+<td class=3D""text-12 c-grey-4"" style=3D""font-size:12px; line-height:14px; f=
+ont-family:Helvetica, Arial, sans-serif; text-align:left; min-width:auto !i=
+mportant; color:#7a9299;""><a href=3D""https://www.reddit.com/user/A_Squareo1=
+o/?correlation_id=3D4ce6361e-fc06-42d4-aa97-9c3053faa068&amp;ref=3Drecover_=
+password&amp;ref_campaign=3Drecover_password&amp;ref_source=3Demail"" target=
+=3D""_blank"" class=3D""link c-grey-4"" style=3D""text-decoration:none; color:#7=
+a9299;""><span class=3D""link c-grey-4"" style=3D""text-decoration:none; color:=
+#7a9299;"">u/A_Squareo1o</span></a></td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""text-16 mfz-14 mlh-16 pb-28 mpb-20"" style=3D""font-size:16px; l=
+ine-height:18px; color:#000000; font-family:Helvetica, Arial, sans-serif; t=
+ext-align:left; min-width:auto !important; padding-bottom: 28px;"">
+
+Hi A_Squareo1o,
+
+<br /><br />
+
+Thanks for requesting a password reset. To create a new password, just use =
+the button below.
+</td>
+</tr>
+<tr>
+<td class=3D""pb-34 mpb-28"" align=3D""center"" style=3D""padding-bottom: 34px;""=
+>
+<table width=3D""214"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""btn-14"" bgcolor=3D""#0079d3"" style=3D""border-radius: 4px; font-=
+size:14px; line-height:18px; mso-padding-alt:8px; color:#ffffff; font-famil=
+y:Helvetica, Arial, sans-serif; text-align:center; min-width:auto !importan=
+t;""><a href=3D""https://www.reddit.com/passwordrecovery?%24deep_link=3Dtrue&=
+amp;correlation_id=3D4ce6361e-fc06-42d4-aa97-9c3053faa068&amp;ref=3Drecover=
+_password&amp;ref_campaign=3Drecover_password&amp;ref_source=3Demail&amp;to=
+ken=3Drpt_TsIWAMlATimQpm1ddjkUCA"" target=3D""_blank"" class=3D""link c-white"" =
+style=3D""display: block; padding: 8px; text-decoration:none; color:#ffffff;=
+""><span class=3D""link c-white"" style=3D""text-decoration:none; color:#ffffff=
+;""><strong>Reset Password</strong></span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""text-16 mfz-14 mlh-16 pb-28 mpb-20"" style=3D""font-size:16px; l=
+ine-height:18px; color:#000000; font-family:Helvetica, Arial, sans-serif; t=
+ext-align:left; min-width:auto !important; padding-bottom: 28px;"">
+If you didn=E2=80=99t make this request, you can ignore this email and carr=
+y on as usual. If you need any more help logging in to your Reddit account,=
+ check out our <a href=3D""https://www.reddithelp.com/en/categories/privacy-=
+security/account-security?$web_only=3Dtrue"" target=3D""_blank"" class=3D""link=
+ c-blue"" style=3D""text-decoration:none; color:#006cbf;""><span class=3D""link=
+ c-blue"" style=3D""text-decoration:none; color:#006cbf;"">Account Security FA=
+Qs</span></a> or <a href=3D""https://www.reddithelp.com/en/submit-request?$w=
+eb_only=3Dtrue"" target=3D""_blank"" class=3D""link c-blue"" style=3D""text-decor=
+ation:none; color:#006cbf;""><span class=3D""link c-blue"" style=3D""text-decor=
+ation:none; color:#006cbf;"">contact us</span></a>.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END Reset your password -->
+<!-- Footer - 1 -->
+<tr>
+<td class=3D""pt-48 mpt-16 mpt-34"" style=3D""padding-top: 48px;"" bgcolor=3D""#=
+f2f5f6"">
+<table width=3D""100%"" cellspacing=3D""0"" cellpadding=3D""0"" border=3D""0"">
+<tbody>
+<tr>
+<td class=3D""img-center pb-28 w-104 mpb-20"" style=3D""font-size:0pt; line-he=
+ight:0pt; text-align:center; padding-bottom: 28px;""><a href=3D""https://www.=
+reddit.com/"" target=3D""_blank""><img src=3D""https://www.redditstatic.com/ema=
+ildigest/logo@2x.png"" alt=3D"""" width=3D""115"" height=3D""40"" border=3D""0""></a=
+></td>
+</tr>
+<tr>
+<td class=3D""pb-20"" style=3D""padding-bottom: 20px;"" align=3D""center"">
+<table cellspacing=3D""0"" cellpadding=3D""0"" border=3D""0"">
+<tbody>
+<tr>
+<td class=3D""img w-114"" style=3D""font-size:0pt; line-height:0pt; text-align=
+:left;"" valign=3D""top""><a href=3D""https://apps.apple.com/us/app/reddit/id10=
+64216828"" target=3D""_blank""><img src=3D""https://www.redditstatic.com/emaild=
+igest/app_store_8_8.png"" alt=3D"""" width=3D""124"" height=3D""37"" border=3D""0"">=
+</a></td>
+<td class=3D""img w-8"" style=3D""font-size:0pt; line-height:0pt; text-align:l=
+eft;"" width=3D""10""></td>
+<td class=3D""img w-114"" style=3D""font-size:0pt; line-height:0pt; text-align=
+:left;"" valign=3D""top""><a href=3D""https://play.google.com/store/apps/detail=
+s?id=3Dcom.reddit.frontpage"" target=3D""_blank""><img src=3D""https://www.redd=
+itstatic.com/emaildigest/google_play_8_8.png"" alt=3D"""" width=3D""124"" height=
+=3D""37"" border=3D""0""></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""pb-20 px-24 mpx-12 mpb-20"" style=3D""padding-bottom: 20px; padd=
+ing-left: 24px; padding-right: 24px;"">
+<table width=3D""100%"" cellspacing=3D""0"" cellpadding=3D""0"" border=3D""0"">
+<tbody>
+<tr>
+<td class=3D""text-16-8 mfz-12 mlh-18 a-center"" style=3D""font-size:16px; lin=
+e-height:18px; color:#687981; font-family:Helvetica, Arial, sans-serif; min=
+-width:auto !important; text-align:center;"">
+You are receiving this email because a Reddit account, u/A_Squareo1o, is re=
+gistered to this email address.
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""text-16-8 mfz-12 mlh-18 c-dark-8-8 a-center px-24 mpx-12"" styl=
+e=3D""font-size:16px; line-height:18px; font-family:Helvetica, Arial, sans-s=
+erif; min-width:auto !important; color:#222222; text-align:center; padding-=
+left: 24px; padding-right: 24px;"">548 Market St., #16093, San Francisco, CA=
+ 94104=E2=80=935401</td>
+</tr>
+<tr>
+<td class=3D""fluid-img"" style=3D""font-size:0pt; line-height:0pt; text-align=
+:left;""><img src=3D""https://www.redditstatic.com/emaildigest/footer_logo_8_=
+8.png"" alt=3D"""" width=3D""600"" height=3D""115"" border=3D""0""></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- END Footer - 1 -->
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</center>
+<img alt=3D"""" src=3D""https://ql9whnmm.r.us-east-1.awstrack.me/I0/0100018f20=
+6366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000/RMc52NSTU1DwKI3LRUrMHOX1=
+hX0=3D371"" style=3D""display: none; width: 1px; height: 1px;"">
+</body>
+</html>
+",0
+"Delivered-To: awaisamin09@gmail.com
+Received: by 2002:a05:6840:9aa4:b0:17c6:483f:10d5 with SMTP id g4csp1062537nly;
+        Sat, 27 Apr 2024 09:28:57 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHBTsB+3AQXKu+8Y+qthxFE7j3JgnQPo7vv3lTtNwjmWgInlz4mCJ/2kdYFZtvwmOaMg7d5
+X-Received: by 2002:a05:620a:2951:b0:790:c69a:d3f3 with SMTP id n17-20020a05620a295100b00790c69ad3f3mr1866616qkp.15.1714235337274;
+        Sat, 27 Apr 2024 09:28:57 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1714235337; cv=none;
+        d=google.com; s=arc-20160816;
+        b=jwxiRGqH78rYuPe9zWAgdYjOME3Asa2KCvAFwaNoMvCnC9/SRHFu8pKNrzANz38GCC
+         VAkhLptLuR5PyEMcj7vDEDLuBtgHaWOx07zSeYsowrzOw1hKuUI4SmGEll+A8m31NuQZ
+         JV5qJ+iErpoYWLPGv4HPuU4WPNIYcpcihIhWTDVxTi93otGgXN1m/HiJ7PD060NNqr4p
+         Sg0RL6/hOukFwa/uC+eOF6S15CtaCp0YZk0r0blFFTMgz76KnQ8cBNMuhyqZKy+pnhRl
+         Gs4ics8vG1P4ddJuw5agqwzit5zUJgplJGZuRVqBMK0VeV9L+VPmNG6MtloK27dxGBRv
+         j/vA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:content-transfer-encoding:mime-version
+         :subject:to:from:dkim-signature:dkim-signature;
+        bh=U7GfWtbHR/nBrbFcwZpssra7ezg248H73MkgrxV9Sj0=;
+        fh=ynGQ1apFrYQJopxq1S43aauLBxuPPzO5GhVh7wL0hug=;
+        b=cFiq4UkUn+Y0jN+IAejH1cT9GdEOrZDF4Dclc/gsxigSshOgkUZ3jljCzNlCsb/aWG
+         QjORrGDwK0KmB8oZwNUhMzCZU0UREwFkWuuwxg5v0WRMRQa8Leh+ZsJfC0GzeTLXDUoB
+         uhAMdlK6g4Wnt0X1orA7RiKeqRSJSmpNwSkmYfr+tP/PoIV9RqKPT9j6gnxfDVOj/OnK
+         gZi6S1IxPfAp24QY/SB1aqOp8vZFehQHH8oc83lXqV7xyJG8C91QyUBZs/GCCvleLjZs
+         aal+klBqJHHRldXl1A+rgeYEQ3DyqJ1pf6uCF+gG06DNV5staflLesSqfMBIb9Ua27bm
+         S9JQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@reddit.com header.s=2ybsbk45dtwlgerewyfzx5qt442lak5j header.b=NvlpxAmH;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Yurm+Uyz;
+       spf=pass (google.com: domain of 0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com designates 23.251.229.109 as permitted sender) smtp.mailfrom=0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=reddit.com
+Return-Path: <0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com>
+Received: from e229-109.smtp-out.amazonses.com (e229-109.smtp-out.amazonses.com. [23.251.229.109])
+        by mx.google.com with ESMTPS id y5-20020ae9f405000000b00787b85281e7si22141205qkl.714.2024.04.27.09.28.56
+        for <awaisamin09@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 27 Apr 2024 09:28:57 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com designates 23.251.229.109 as permitted sender) client-ip=23.251.229.109;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@reddit.com header.s=2ybsbk45dtwlgerewyfzx5qt442lak5j header.b=NvlpxAmH;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Yurm+Uyz;
+       spf=pass (google.com: domain of 0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com designates 23.251.229.109 as permitted sender) smtp.mailfrom=0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=reddit.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=2ybsbk45dtwlgerewyfzx5qt442lak5j; d=reddit.com; t=1714235336; h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date; bh=U7GfWtbHR/nBrbFcwZpssra7ezg248H73MkgrxV9Sj0=; b=NvlpxAmHKTLzyb06IVfQ4Xfy/+9wzXKe/9aylmenzVlM++O3L45hRrMZnYVKajhc 6K/sb7tlNv0YVTTJoAEixZGEZi5YEX41CgJUaBMmyrvVm0M7M2YavEwYAKky4rFDm3N zz/che2rm/XKG9olhKcRICHxGpy92bizqIEso384=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1714235336; h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:Feedback-ID; bh=U7GfWtbHR/nBrbFcwZpssra7ezg248H73MkgrxV9Sj0=; b=Yurm+Uyzp6ntFJpBBcc6Q660LcoPMWu1A+XmqAPzO+INUdTEV9VXMozx4af4x9Fq wy3gTEJtsM6dbfPHnH4s95QePUJ+MBlc0Ci/ybpsnZqgi2s6fkgEgYJJ8hCuvENAvW1 CQa2QgT4uCBdbnsOtQhcRebO7fXdFQeWfGfctqcE=
+From: Reddit <noreply@reddit.com>
+To: awaisamin09@gmail.com
+Subject: Reddit password reset
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Message-ID: <0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@email.amazonses.com>
+Date: Sat, 27 Apr 2024 16:28:56 +0000
+Feedback-ID: 1.us-east-1.UqlFplRllIQtiw+Kq2b87y7uRSu9p66fMici2AQNsMU=:AmazonSES
+X-SES-Outgoing: 2024.04.27-23.251.229.109
+
+<!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Transitional//EN"" ""http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"">
+<html xmlns=3D""http://www.w3.org/1999/xhtml"" xmlns:v=3D""urn:schemas-microso=
+ft-com:vml"" xmlns:o=3D""urn:schemas-microsoft-com:office:office"">
+<head>
+<!-- MonitorCampaignID: recover_password -->
+<!--[if gte mso 9]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<meta http-equiv=3D""Content-type"" content=3D""text/html; charset=3Dutf-8"">
+<meta name=3D""viewport"" content=3D""width=3Ddevice-width, initial-scale=3D1,=
+ maximum-scale=3D1"">
+<meta http-equiv=3D""X-UA-Compatible"" content=3D""IE=3Dedge"">
+<meta name=3D""format-detection"" content=3D""date=3Dno"">
+<meta name=3D""format-detection"" content=3D""address=3Dno"">
+<meta name=3D""format-detection"" content=3D""telephone=3Dno"">
+<meta name=3D""x-apple-disable-message-reformatting"">
+<!--[if !mso]><!-->
+<!--<![endif]-->
+<title>Email Template</title>
+<!--[if gte mso 9]>
+<style type=3D""text/css"" media=3D""all"">
+sup { font-size: 100% !important; }
+</style>
+<![endif]-->
+<style type=3D""text/css"" media=3D""screen"">
+body { padding:0 !important; margin:0 auto !important; display:block !impor=
+tant; min-width:100% !important; width:100% !important; background:#ffffff;=
+ -webkit-text-size-adjust:none }
+a { color:#313e42; text-decoration:none }
+p { padding:0 !important; margin:0 !important }
+img { margin: 0 !important; -ms-interpolation-mode: bicubic; /* Allow smoot=
+her rendering of resized image in Internet Explorer */ }
+a[x-apple-data-detectors] {
+color: inherit !important;
+text-decoration: inherit !important;
+font-size: inherit !important;
+font-family: inherit !important;
+font-weight: inherit !important;
+line-height: inherit !important;
+}
+.btn-12 a { display: block; padding: 4px; text-decoration: none; }
+.btn-14 a { display: block; padding: 8px; text-decoration: none; }
+.btn-14-4 a { display: block; padding: 8px; text-decoration: none; }
+.l-red a { color: #ff0000; }
+/* Mobile styles */
+@media only screen and (max-device-width: 480px), only screen and (max-widt=
+h: 480px) {
+.mpx-16 { padding-left: 16px !important; padding-right: 16px !important; }
+.mpb-48 { padding-bottom: 48px !important; }
+.mfz-16 { font-size: 16px !important; }
+.mlh-18 { line-height: 18px !important; }
+.mpb-28 { padding-bottom: 28px !important; }
+.mfz-14 { font-size: 14px !important; }
+.mlh-16 { line-height: 16px !important; }
+.mpb-12 { padding-bottom: 12px !important; }
+.mpt-8 { padding-top: 8px !important; }
+.mpb-44 { padding-bottom: 44px !important; }
+.mpb-27 { padding-bottom: 27px !important; }
+.mpt-21 { padding-top: 21px !important; }
+.mpb-34 { padding-bottom: 34px !important; }
+.mpb-17 { padding-bottom: 17px !important; }
+.mpb-20 { padding-bottom: 20px !important; }
+.mpt-16 { padding-top: 16px !important; }
+.mpt-34 { padding-top: 34px !important; }
+.mpx-12 { padding-left: 12px !important; padding-right: 12px !important; }
+.mfz-12 { font-size: 12px !important; }
+.mpb-8 { padding-bottom: 8px !important; }
+u + .body .gwfw { width:100% !important; width:100vw !important; }
+.td,
+.m-shell { width: 100% !important; min-width: 100% !important; }
+.mt-left { text-align: left !important; }
+.mt-center { text-align: center !important; }
+.mt-right { text-align: right !important; }
+.me-left { margin-right: auto !important; }
+.me-center { margin: 0 auto !important; }
+.me-right { margin-left: auto !important; }
+.h-auto { height: auto !important; }
+.w-auto { width: auto !important; }
+.fluid-img img { width: 100% !important; max-width: 100% !important; height=
+: auto !important; }
+.column,
+.column-top,
+.column-dir,
+.column-dir-top { float: left !important; width: 100% !important; display: =
+block !important; }
+.m-hide { display: none !important; width: 0 !important; height: 0 !importa=
+nt; font-size: 0 !important; line-height: 0 !important; min-height: 0 !impo=
+rtant; }
+.m-block { display: block !important; }
+/*Width*/
+.w-15 { width: 15px !important; }
+.w-8 { width: 8px !important; height: auto !important; }
+.w-12 { width: 12px !important; height: auto !important; }
+.w-60 { width: 60px !important; height: auto !important; }
+.w-54 { width: 54px !important; height: auto !important; }
+.w-54 img { width: 54px !important; height: auto !important; }
+.w-104 { width: 104px !important; height: auto !important; }
+.w-104 img { width: 104px !important; height: auto !important; }
+.w-114 { width: 114px !important; height: auto !important; }
+.w-114 img { width: 114px !important; height: auto !important; }
+.btn-14-4 { font-size: 12px !important; line-height: 16px !important; }
+.btn-14-4 a { padding: 4px !important; }
+.w-2p { width: 2% !important; }
+.w-32p { width: 32% !important; }
+.w-49p { width: 49% !important; }
+.w-50p { width: 50% !important; }
+.w-100p { width: 100% !important; }
+/*Text*/
+}
+</style>
+</head>
+<body class=3D""body"" style=3D""padding:0 !important; margin:0 auto !importan=
+t; display:block !important; min-width:100% !important; width:100% !importa=
+nt; background:#ffffff; -webkit-text-size-adjust:none;"">
+<center>
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"" styl=
+e=3D""margin: 0; padding: 0; width: 100%;"" bgcolor=3D""#ffffff"" class=3D""gwfw=
+"">
+<tr>
+<td style=3D""margin: 0; padding: 0; width: 100%;"" align=3D""center"">
+<table width=3D""600"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"" class=
+=3D""m-shell"">
+<tr>
+<td class=3D""td"" style=3D""width:600px; min-width:600px; font-size:0pt; line=
+-height:0pt; padding:0; margin:0; font-weight:normal;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<!-- Reset your password -->
+<tr>
+<td class=3D""img"" style=3D""font-size:0pt; line-height:0pt; text-align:left;=
+"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""px-32 mpx-16"" style=3D""padding-left: 32px; padding-right: 32px=
+;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""pt-25 pt-16 pb-28 mpb-20"" style=3D""padding-top: 16px; padding-=
+bottom: 28px;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""pb-34 mpb-28"" style=3D""padding-bottom: 34px;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""img w-104"" width=3D""112"" style=3D""font-size:0pt; line-height:0=
+pt; text-align:left;""><a href=3D""https://www.reddit.com/"" target=3D""_blank""=
+><img src=3D""https://www.redditstatic.com/emaildigest/logo@2x.png"" width=3D=
+""112"" height=3D""39"" border=3D""0"" alt=3D"""" /></a></td>
+<td class=3D""img"" width=3D""20"" style=3D""font-size:0pt; line-height:0pt; tex=
+t-align:left;""></td>
+<td class=3D""img"" style=3D""font-size:0pt; line-height:0pt; text-align:left;=
+"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td align=3D""right"">
+<table border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+
+<tr>
+<td class=3D""img"" width=3D""16"" valign=3D""top"" style=3D""font-size:0pt; line-=
+height:0pt; text-align:left;""><img src=3D""https://styles.redditmedia.com/t5=
+_98jz2h/styles/profileIcon_snoo-nftv2_bmZ0X2VpcDE1NToxMzdfZWI5NTlhNzE1ZGZmZ=
+mU2ZjgyZjQ2MDU1MzM5ODJjNDg1OWNiMTRmZV8xMTg4OTQ0MQ_rare_f6f3fd99-25cd-40ec-9=
+4d3-8ab11a47f784-headshot.png?crop=3D256:256,smart&amp;height=3D256&amp;wid=
+th=3D256&amp;s=3D75f5e24c16cc7ec3faff5a49d883cd1a6329df02"" width=3D""16"" hei=
+ght=3D""16"" border=3D""0"" alt=3D"""" /></td>
+<td class=3D""img"" width=3D""4"" style=3D""font-size:0pt; line-height:0pt; text=
+-align:left;""></td>
+<td class=3D""text-12 c-grey-4"" style=3D""font-size:12px; line-height:14px; f=
+ont-family:Helvetica, Arial, sans-serif; text-align:left; min-width:auto !i=
+mportant; color:#7a9299;""><a href=3D""https://www.reddit.com/user/A_Squareo1=
+o/?correlation_id=3D4ce6361e-fc06-42d4-aa97-9c3053faa068&amp;ref=3Drecover_=
+password&amp;ref_campaign=3Drecover_password&amp;ref_source=3Demail"" target=
+=3D""_blank"" class=3D""link c-grey-4"" style=3D""text-decoration:none; color:#7=
+a9299;""><span class=3D""link c-grey-4"" style=3D""text-decoration:none; color:=
+#7a9299;"">u/A_Squareo1o</span></a></td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""text-16 mfz-14 mlh-16 pb-28 mpb-20"" style=3D""font-size:16px; l=
+ine-height:18px; color:#000000; font-family:Helvetica, Arial, sans-serif; t=
+ext-align:left; min-width:auto !important; padding-bottom: 28px;"">
+
+Hi A_Squareo1o,
+
+<br /><br />
+
+Thanks for requesting a password reset. To create a new password, just use =
+the button below.
+</td>
+</tr>
+<tr>
+<td class=3D""pb-34 mpb-28"" align=3D""center"" style=3D""padding-bottom: 34px;""=
+>
+<table width=3D""214"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""btn-14"" bgcolor=3D""#0079d3"" style=3D""border-radius: 4px; font-=
+size:14px; line-height:18px; mso-padding-alt:8px; color:#ffffff; font-famil=
+y:Helvetica, Arial, sans-serif; text-align:center; min-width:auto !importan=
+t;""><a href=3D""https://www.reddit.com/passwordrecovery?%24deep_link=3Dtrue&=
+amp;correlation_id=3D4ce6361e-fc06-42d4-aa97-9c3053faa068&amp;ref=3Drecover=
+_password&amp;ref_campaign=3Drecover_password&amp;ref_source=3Demail&amp;to=
+ken=3Drpt_TsIWAMlATimQpm1ddjkUCA"" target=3D""_blank"" class=3D""link c-white"" =
+style=3D""display: block; padding: 8px; text-decoration:none; color:#ffffff;=
+""><span class=3D""link c-white"" style=3D""text-decoration:none; color:#ffffff=
+;""><strong>Reset Password</strong></span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""text-16 mfz-14 mlh-16 pb-28 mpb-20"" style=3D""font-size:16px; l=
+ine-height:18px; color:#000000; font-family:Helvetica, Arial, sans-serif; t=
+ext-align:left; min-width:auto !important; padding-bottom: 28px;"">
+If you didn=E2=80=99t make this request, you can ignore this email and carr=
+y on as usual. If you need any more help logging in to your Reddit account,=
+ check out our <a href=3D""https://www.reddithelp.com/en/categories/privacy-=
+security/account-security?$web_only=3Dtrue"" target=3D""_blank"" class=3D""link=
+ c-blue"" style=3D""text-decoration:none; color:#006cbf;""><span class=3D""link=
+ c-blue"" style=3D""text-decoration:none; color:#006cbf;"">Account Security FA=
+Qs</span></a> or <a href=3D""https://www.reddithelp.com/en/submit-request?$w=
+eb_only=3Dtrue"" target=3D""_blank"" class=3D""link c-blue"" style=3D""text-decor=
+ation:none; color:#006cbf;""><span class=3D""link c-blue"" style=3D""text-decor=
+ation:none; color:#006cbf;"">contact us</span></a>.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END Reset your password -->
+<!-- Footer - 1 -->
+<tr>
+<td class=3D""pt-48 mpt-16 mpt-34"" style=3D""padding-top: 48px;"" bgcolor=3D""#=
+f2f5f6"">
+<table width=3D""100%"" cellspacing=3D""0"" cellpadding=3D""0"" border=3D""0"">
+<tbody>
+<tr>
+<td class=3D""img-center pb-28 w-104 mpb-20"" style=3D""font-size:0pt; line-he=
+ight:0pt; text-align:center; padding-bottom: 28px;""><a href=3D""https://www.=
+reddit.com/"" target=3D""_blank""><img src=3D""https://www.redditstatic.com/ema=
+ildigest/logo@2x.png"" alt=3D"""" width=3D""115"" height=3D""40"" border=3D""0""></a=
+></td>
+</tr>
+<tr>
+<td class=3D""pb-20"" style=3D""padding-bottom: 20px;"" align=3D""center"">
+<table cellspacing=3D""0"" cellpadding=3D""0"" border=3D""0"">
+<tbody>
+<tr>
+<td class=3D""img w-114"" style=3D""font-size:0pt; line-height:0pt; text-align=
+:left;"" valign=3D""top""><a href=3D""https://apps.apple.com/us/app/reddit/id10=
+64216828"" target=3D""_blank""><img src=3D""https://www.redditstatic.com/emaild=
+igest/app_store_8_8.png"" alt=3D"""" width=3D""124"" height=3D""37"" border=3D""0"">=
+</a></td>
+<td class=3D""img w-8"" style=3D""font-size:0pt; line-height:0pt; text-align:l=
+eft;"" width=3D""10""></td>
+<td class=3D""img w-114"" style=3D""font-size:0pt; line-height:0pt; text-align=
+:left;"" valign=3D""top""><a href=3D""https://play.google.com/store/apps/detail=
+s?id=3Dcom.reddit.frontpage"" target=3D""_blank""><img src=3D""https://www.redd=
+itstatic.com/emaildigest/google_play_8_8.png"" alt=3D"""" width=3D""124"" height=
+=3D""37"" border=3D""0""></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""pb-20 px-24 mpx-12 mpb-20"" style=3D""padding-bottom: 20px; padd=
+ing-left: 24px; padding-right: 24px;"">
+<table width=3D""100%"" cellspacing=3D""0"" cellpadding=3D""0"" border=3D""0"">
+<tbody>
+<tr>
+<td class=3D""text-16-8 mfz-12 mlh-18 a-center"" style=3D""font-size:16px; lin=
+e-height:18px; color:#687981; font-family:Helvetica, Arial, sans-serif; min=
+-width:auto !important; text-align:center;"">
+You are receiving this email because a Reddit account, u/A_Squareo1o, is re=
+gistered to this email address.
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""text-16-8 mfz-12 mlh-18 c-dark-8-8 a-center px-24 mpx-12"" styl=
+e=3D""font-size:16px; line-height:18px; font-family:Helvetica, Arial, sans-s=
+erif; min-width:auto !important; color:#222222; text-align:center; padding-=
+left: 24px; padding-right: 24px;"">548 Market St., #16093, San Francisco, CA=
+ 94104=E2=80=935401</td>
+</tr>
+<tr>
+<td class=3D""fluid-img"" style=3D""font-size:0pt; line-height:0pt; text-align=
+:left;""><img src=3D""https://www.redditstatic.com/emaildigest/footer_logo_8_=
+8.png"" alt=3D"""" width=3D""600"" height=3D""115"" border=3D""0""></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- END Footer - 1 -->
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</center>
+<img alt=3D"""" src=3D""https://ql9whnmm.r.us-east-1.awstrack.me/I0/0100018f20=
+6366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000/RMc52NSTU1DwKI3LRUrMHOX1=
+hX0=3D371"" style=3D""display: none; width: 1px; height: 1px;"">
+</body>
+</html>
+",0
+"Delivered-To: awaisamin09@gmail.com
+Received: by 2002:a05:6840:9aa4:b0:17c6:483f:10d5 with SMTP id g4csp1062537nly;
+        Sat, 27 Apr 2024 09:28:57 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHBTsB+3AQXKu+8Y+qthxFE7j3JgnQPo7vv3lTtNwjmWgInlz4mCJ/2kdYFZtvwmOaMg7d5
+X-Received: by 2002:a05:620a:2951:b0:790:c69a:d3f3 with SMTP id n17-20020a05620a295100b00790c69ad3f3mr1866616qkp.15.1714235337274;
+        Sat, 27 Apr 2024 09:28:57 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1714235337; cv=none;
+        d=google.com; s=arc-20160816;
+        b=jwxiRGqH78rYuPe9zWAgdYjOME3Asa2KCvAFwaNoMvCnC9/SRHFu8pKNrzANz38GCC
+         VAkhLptLuR5PyEMcj7vDEDLuBtgHaWOx07zSeYsowrzOw1hKuUI4SmGEll+A8m31NuQZ
+         JV5qJ+iErpoYWLPGv4HPuU4WPNIYcpcihIhWTDVxTi93otGgXN1m/HiJ7PD060NNqr4p
+         Sg0RL6/hOukFwa/uC+eOF6S15CtaCp0YZk0r0blFFTMgz76KnQ8cBNMuhyqZKy+pnhRl
+         Gs4ics8vG1P4ddJuw5agqwzit5zUJgplJGZuRVqBMK0VeV9L+VPmNG6MtloK27dxGBRv
+         j/vA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:content-transfer-encoding:mime-version
+         :subject:to:from:dkim-signature:dkim-signature;
+        bh=U7GfWtbHR/nBrbFcwZpssra7ezg248H73MkgrxV9Sj0=;
+        fh=ynGQ1apFrYQJopxq1S43aauLBxuPPzO5GhVh7wL0hug=;
+        b=cFiq4UkUn+Y0jN+IAejH1cT9GdEOrZDF4Dclc/gsxigSshOgkUZ3jljCzNlCsb/aWG
+         QjORrGDwK0KmB8oZwNUhMzCZU0UREwFkWuuwxg5v0WRMRQa8Leh+ZsJfC0GzeTLXDUoB
+         uhAMdlK6g4Wnt0X1orA7RiKeqRSJSmpNwSkmYfr+tP/PoIV9RqKPT9j6gnxfDVOj/OnK
+         gZi6S1IxPfAp24QY/SB1aqOp8vZFehQHH8oc83lXqV7xyJG8C91QyUBZs/GCCvleLjZs
+         aal+klBqJHHRldXl1A+rgeYEQ3DyqJ1pf6uCF+gG06DNV5staflLesSqfMBIb9Ua27bm
+         S9JQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@reddit.com header.s=2ybsbk45dtwlgerewyfzx5qt442lak5j header.b=NvlpxAmH;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Yurm+Uyz;
+       spf=pass (google.com: domain of 0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com designates 23.251.229.109 as permitted sender) smtp.mailfrom=0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=reddit.com
+Return-Path: <0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com>
+Received: from e229-109.smtp-out.amazonses.com (e229-109.smtp-out.amazonses.com. [23.251.229.109])
+        by mx.google.com with ESMTPS id y5-20020ae9f405000000b00787b85281e7si22141205qkl.714.2024.04.27.09.28.56
+        for <awaisamin09@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 27 Apr 2024 09:28:57 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com designates 23.251.229.109 as permitted sender) client-ip=23.251.229.109;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@reddit.com header.s=2ybsbk45dtwlgerewyfzx5qt442lak5j header.b=NvlpxAmH;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Yurm+Uyz;
+       spf=pass (google.com: domain of 0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com designates 23.251.229.109 as permitted sender) smtp.mailfrom=0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=reddit.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=2ybsbk45dtwlgerewyfzx5qt442lak5j; d=reddit.com; t=1714235336; h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date; bh=U7GfWtbHR/nBrbFcwZpssra7ezg248H73MkgrxV9Sj0=; b=NvlpxAmHKTLzyb06IVfQ4Xfy/+9wzXKe/9aylmenzVlM++O3L45hRrMZnYVKajhc 6K/sb7tlNv0YVTTJoAEixZGEZi5YEX41CgJUaBMmyrvVm0M7M2YavEwYAKky4rFDm3N zz/che2rm/XKG9olhKcRICHxGpy92bizqIEso384=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1714235336; h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:Feedback-ID; bh=U7GfWtbHR/nBrbFcwZpssra7ezg248H73MkgrxV9Sj0=; b=Yurm+Uyzp6ntFJpBBcc6Q660LcoPMWu1A+XmqAPzO+INUdTEV9VXMozx4af4x9Fq wy3gTEJtsM6dbfPHnH4s95QePUJ+MBlc0Ci/ybpsnZqgi2s6fkgEgYJJ8hCuvENAvW1 CQa2QgT4uCBdbnsOtQhcRebO7fXdFQeWfGfctqcE=
+From: Reddit <noreply@reddit.com>
+To: awaisamin09@gmail.com
+Subject: Reddit password reset
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Message-ID: <0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@email.amazonses.com>
+Date: Sat, 27 Apr 2024 16:28:56 +0000
+Feedback-ID: 1.us-east-1.UqlFplRllIQtiw+Kq2b87y7uRSu9p66fMici2AQNsMU=:AmazonSES
+X-SES-Outgoing: 2024.04.27-23.251.229.109
+
+<!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Transitional//EN"" ""http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"">
+<html xmlns=3D""http://www.w3.org/1999/xhtml"" xmlns:v=3D""urn:schemas-microso=
+ft-com:vml"" xmlns:o=3D""urn:schemas-microsoft-com:office:office"">
+<head>
+<!-- MonitorCampaignID: recover_password -->
+<!--[if gte mso 9]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<meta http-equiv=3D""Content-type"" content=3D""text/html; charset=3Dutf-8"">
+<meta name=3D""viewport"" content=3D""width=3Ddevice-width, initial-scale=3D1,=
+ maximum-scale=3D1"">
+<meta http-equiv=3D""X-UA-Compatible"" content=3D""IE=3Dedge"">
+<meta name=3D""format-detection"" content=3D""date=3Dno"">
+<meta name=3D""format-detection"" content=3D""address=3Dno"">
+<meta name=3D""format-detection"" content=3D""telephone=3Dno"">
+<meta name=3D""x-apple-disable-message-reformatting"">
+<!--[if !mso]><!-->
+<!--<![endif]-->
+<title>Email Template</title>
+<!--[if gte mso 9]>
+<style type=3D""text/css"" media=3D""all"">
+sup { font-size: 100% !important; }
+</style>
+<![endif]-->
+<style type=3D""text/css"" media=3D""screen"">
+body { padding:0 !important; margin:0 auto !important; display:block !impor=
+tant; min-width:100% !important; width:100% !important; background:#ffffff;=
+ -webkit-text-size-adjust:none }
+a { color:#313e42; text-decoration:none }
+p { padding:0 !important; margin:0 !important }
+img { margin: 0 !important; -ms-interpolation-mode: bicubic; /* Allow smoot=
+her rendering of resized image in Internet Explorer */ }
+a[x-apple-data-detectors] {
+color: inherit !important;
+text-decoration: inherit !important;
+font-size: inherit !important;
+font-family: inherit !important;
+font-weight: inherit !important;
+line-height: inherit !important;
+}
+.btn-12 a { display: block; padding: 4px; text-decoration: none; }
+.btn-14 a { display: block; padding: 8px; text-decoration: none; }
+.btn-14-4 a { display: block; padding: 8px; text-decoration: none; }
+.l-red a { color: #ff0000; }
+/* Mobile styles */
+@media only screen and (max-device-width: 480px), only screen and (max-widt=
+h: 480px) {
+.mpx-16 { padding-left: 16px !important; padding-right: 16px !important; }
+.mpb-48 { padding-bottom: 48px !important; }
+.mfz-16 { font-size: 16px !important; }
+.mlh-18 { line-height: 18px !important; }
+.mpb-28 { padding-bottom: 28px !important; }
+.mfz-14 { font-size: 14px !important; }
+.mlh-16 { line-height: 16px !important; }
+.mpb-12 { padding-bottom: 12px !important; }
+.mpt-8 { padding-top: 8px !important; }
+.mpb-44 { padding-bottom: 44px !important; }
+.mpb-27 { padding-bottom: 27px !important; }
+.mpt-21 { padding-top: 21px !important; }
+.mpb-34 { padding-bottom: 34px !important; }
+.mpb-17 { padding-bottom: 17px !important; }
+.mpb-20 { padding-bottom: 20px !important; }
+.mpt-16 { padding-top: 16px !important; }
+.mpt-34 { padding-top: 34px !important; }
+.mpx-12 { padding-left: 12px !important; padding-right: 12px !important; }
+.mfz-12 { font-size: 12px !important; }
+.mpb-8 { padding-bottom: 8px !important; }
+u + .body .gwfw { width:100% !important; width:100vw !important; }
+.td,
+.m-shell { width: 100% !important; min-width: 100% !important; }
+.mt-left { text-align: left !important; }
+.mt-center { text-align: center !important; }
+.mt-right { text-align: right !important; }
+.me-left { margin-right: auto !important; }
+.me-center { margin: 0 auto !important; }
+.me-right { margin-left: auto !important; }
+.h-auto { height: auto !important; }
+.w-auto { width: auto !important; }
+.fluid-img img { width: 100% !important; max-width: 100% !important; height=
+: auto !important; }
+.column,
+.column-top,
+.column-dir,
+.column-dir-top { float: left !important; width: 100% !important; display: =
+block !important; }
+.m-hide { display: none !important; width: 0 !important; height: 0 !importa=
+nt; font-size: 0 !important; line-height: 0 !important; min-height: 0 !impo=
+rtant; }
+.m-block { display: block !important; }
+/*Width*/
+.w-15 { width: 15px !important; }
+.w-8 { width: 8px !important; height: auto !important; }
+.w-12 { width: 12px !important; height: auto !important; }
+.w-60 { width: 60px !important; height: auto !important; }
+.w-54 { width: 54px !important; height: auto !important; }
+.w-54 img { width: 54px !important; height: auto !important; }
+.w-104 { width: 104px !important; height: auto !important; }
+.w-104 img { width: 104px !important; height: auto !important; }
+.w-114 { width: 114px !important; height: auto !important; }
+.w-114 img { width: 114px !important; height: auto !important; }
+.btn-14-4 { font-size: 12px !important; line-height: 16px !important; }
+.btn-14-4 a { padding: 4px !important; }
+.w-2p { width: 2% !important; }
+.w-32p { width: 32% !important; }
+.w-49p { width: 49% !important; }
+.w-50p { width: 50% !important; }
+.w-100p { width: 100% !important; }
+/*Text*/
+}
+</style>
+</head>
+<body class=3D""body"" style=3D""padding:0 !important; margin:0 auto !importan=
+t; display:block !important; min-width:100% !important; width:100% !importa=
+nt; background:#ffffff; -webkit-text-size-adjust:none;"">
+<center>
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"" styl=
+e=3D""margin: 0; padding: 0; width: 100%;"" bgcolor=3D""#ffffff"" class=3D""gwfw=
+"">
+<tr>
+<td style=3D""margin: 0; padding: 0; width: 100%;"" align=3D""center"">
+<table width=3D""600"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"" class=
+=3D""m-shell"">
+<tr>
+<td class=3D""td"" style=3D""width:600px; min-width:600px; font-size:0pt; line=
+-height:0pt; padding:0; margin:0; font-weight:normal;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<!-- Reset your password -->
+<tr>
+<td class=3D""img"" style=3D""font-size:0pt; line-height:0pt; text-align:left;=
+"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""px-32 mpx-16"" style=3D""padding-left: 32px; padding-right: 32px=
+;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""pt-25 pt-16 pb-28 mpb-20"" style=3D""padding-top: 16px; padding-=
+bottom: 28px;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""pb-34 mpb-28"" style=3D""padding-bottom: 34px;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""img w-104"" width=3D""112"" style=3D""font-size:0pt; line-height:0=
+pt; text-align:left;""><a href=3D""https://www.reddit.com/"" target=3D""_blank""=
+><img src=3D""https://www.redditstatic.com/emaildigest/logo@2x.png"" width=3D=
+""112"" height=3D""39"" border=3D""0"" alt=3D"""" /></a></td>
+<td class=3D""img"" width=3D""20"" style=3D""font-size:0pt; line-height:0pt; tex=
+t-align:left;""></td>
+<td class=3D""img"" style=3D""font-size:0pt; line-height:0pt; text-align:left;=
+"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td align=3D""right"">
+<table border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+
+<tr>
+<td class=3D""img"" width=3D""16"" valign=3D""top"" style=3D""font-size:0pt; line-=
+height:0pt; text-align:left;""><img src=3D""https://styles.redditmedia.com/t5=
+_98jz2h/styles/profileIcon_snoo-nftv2_bmZ0X2VpcDE1NToxMzdfZWI5NTlhNzE1ZGZmZ=
+mU2ZjgyZjQ2MDU1MzM5ODJjNDg1OWNiMTRmZV8xMTg4OTQ0MQ_rare_f6f3fd99-25cd-40ec-9=
+4d3-8ab11a47f784-headshot.png?crop=3D256:256,smart&amp;height=3D256&amp;wid=
+th=3D256&amp;s=3D75f5e24c16cc7ec3faff5a49d883cd1a6329df02"" width=3D""16"" hei=
+ght=3D""16"" border=3D""0"" alt=3D"""" /></td>
+<td class=3D""img"" width=3D""4"" style=3D""font-size:0pt; line-height:0pt; text=
+-align:left;""></td>
+<td class=3D""text-12 c-grey-4"" style=3D""font-size:12px; line-height:14px; f=
+ont-family:Helvetica, Arial, sans-serif; text-align:left; min-width:auto !i=
+mportant; color:#7a9299;""><a href=3D""https://www.reddit.com/user/A_Squareo1=
+o/?correlation_id=3D4ce6361e-fc06-42d4-aa97-9c3053faa068&amp;ref=3Drecover_=
+password&amp;ref_campaign=3Drecover_password&amp;ref_source=3Demail"" target=
+=3D""_blank"" class=3D""link c-grey-4"" style=3D""text-decoration:none; color:#7=
+a9299;""><span class=3D""link c-grey-4"" style=3D""text-decoration:none; color:=
+#7a9299;"">u/A_Squareo1o</span></a></td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""text-16 mfz-14 mlh-16 pb-28 mpb-20"" style=3D""font-size:16px; l=
+ine-height:18px; color:#000000; font-family:Helvetica, Arial, sans-serif; t=
+ext-align:left; min-width:auto !important; padding-bottom: 28px;"">
+
+Hi A_Squareo1o,
+
+<br /><br />
+
+Thanks for requesting a password reset. To create a new password, just use =
+the button below.
+</td>
+</tr>
+<tr>
+<td class=3D""pb-34 mpb-28"" align=3D""center"" style=3D""padding-bottom: 34px;""=
+>
+<table width=3D""214"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""btn-14"" bgcolor=3D""#0079d3"" style=3D""border-radius: 4px; font-=
+size:14px; line-height:18px; mso-padding-alt:8px; color:#ffffff; font-famil=
+y:Helvetica, Arial, sans-serif; text-align:center; min-width:auto !importan=
+t;""><a href=3D""https://www.reddit.com/passwordrecovery?%24deep_link=3Dtrue&=
+amp;correlation_id=3D4ce6361e-fc06-42d4-aa97-9c3053faa068&amp;ref=3Drecover=
+_password&amp;ref_campaign=3Drecover_password&amp;ref_source=3Demail&amp;to=
+ken=3Drpt_TsIWAMlATimQpm1ddjkUCA"" target=3D""_blank"" class=3D""link c-white"" =
+style=3D""display: block; padding: 8px; text-decoration:none; color:#ffffff;=
+""><span class=3D""link c-white"" style=3D""text-decoration:none; color:#ffffff=
+;""><strong>Reset Password</strong></span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""text-16 mfz-14 mlh-16 pb-28 mpb-20"" style=3D""font-size:16px; l=
+ine-height:18px; color:#000000; font-family:Helvetica, Arial, sans-serif; t=
+ext-align:left; min-width:auto !important; padding-bottom: 28px;"">
+If you didn=E2=80=99t make this request, you can ignore this email and carr=
+y on as usual. If you need any more help logging in to your Reddit account,=
+ check out our <a href=3D""https://www.reddithelp.com/en/categories/privacy-=
+security/account-security?$web_only=3Dtrue"" target=3D""_blank"" class=3D""link=
+ c-blue"" style=3D""text-decoration:none; color:#006cbf;""><span class=3D""link=
+ c-blue"" style=3D""text-decoration:none; color:#006cbf;"">Account Security FA=
+Qs</span></a> or <a href=3D""https://www.reddithelp.com/en/submit-request?$w=
+eb_only=3Dtrue"" target=3D""_blank"" class=3D""link c-blue"" style=3D""text-decor=
+ation:none; color:#006cbf;""><span class=3D""link c-blue"" style=3D""text-decor=
+ation:none; color:#006cbf;"">contact us</span></a>.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END Reset your password -->
+<!-- Footer - 1 -->
+<tr>
+<td class=3D""pt-48 mpt-16 mpt-34"" style=3D""padding-top: 48px;"" bgcolor=3D""#=
+f2f5f6"">
+<table width=3D""100%"" cellspacing=3D""0"" cellpadding=3D""0"" border=3D""0"">
+<tbody>
+<tr>
+<td class=3D""img-center pb-28 w-104 mpb-20"" style=3D""font-size:0pt; line-he=
+ight:0pt; text-align:center; padding-bottom: 28px;""><a href=3D""https://www.=
+reddit.com/"" target=3D""_blank""><img src=3D""https://www.redditstatic.com/ema=
+ildigest/logo@2x.png"" alt=3D"""" width=3D""115"" height=3D""40"" border=3D""0""></a=
+></td>
+</tr>
+<tr>
+<td class=3D""pb-20"" style=3D""padding-bottom: 20px;"" align=3D""center"">
+<table cellspacing=3D""0"" cellpadding=3D""0"" border=3D""0"">
+<tbody>
+<tr>
+<td class=3D""img w-114"" style=3D""font-size:0pt; line-height:0pt; text-align=
+:left;"" valign=3D""top""><a href=3D""https://apps.apple.com/us/app/reddit/id10=
+64216828"" target=3D""_blank""><img src=3D""https://www.redditstatic.com/emaild=
+igest/app_store_8_8.png"" alt=3D"""" width=3D""124"" height=3D""37"" border=3D""0"">=
+</a></td>
+<td class=3D""img w-8"" style=3D""font-size:0pt; line-height:0pt; text-align:l=
+eft;"" width=3D""10""></td>
+<td class=3D""img w-114"" style=3D""font-size:0pt; line-height:0pt; text-align=
+:left;"" valign=3D""top""><a href=3D""https://play.google.com/store/apps/detail=
+s?id=3Dcom.reddit.frontpage"" target=3D""_blank""><img src=3D""https://www.redd=
+itstatic.com/emaildigest/google_play_8_8.png"" alt=3D"""" width=3D""124"" height=
+=3D""37"" border=3D""0""></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""pb-20 px-24 mpx-12 mpb-20"" style=3D""padding-bottom: 20px; padd=
+ing-left: 24px; padding-right: 24px;"">
+<table width=3D""100%"" cellspacing=3D""0"" cellpadding=3D""0"" border=3D""0"">
+<tbody>
+<tr>
+<td class=3D""text-16-8 mfz-12 mlh-18 a-center"" style=3D""font-size:16px; lin=
+e-height:18px; color:#687981; font-family:Helvetica, Arial, sans-serif; min=
+-width:auto !important; text-align:center;"">
+You are receiving this email because a Reddit account, u/A_Squareo1o, is re=
+gistered to this email address.
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""text-16-8 mfz-12 mlh-18 c-dark-8-8 a-center px-24 mpx-12"" styl=
+e=3D""font-size:16px; line-height:18px; font-family:Helvetica, Arial, sans-s=
+erif; min-width:auto !important; color:#222222; text-align:center; padding-=
+left: 24px; padding-right: 24px;"">548 Market St., #16093, San Francisco, CA=
+ 94104=E2=80=935401</td>
+</tr>
+<tr>
+<td class=3D""fluid-img"" style=3D""font-size:0pt; line-height:0pt; text-align=
+:left;""><img src=3D""https://www.redditstatic.com/emaildigest/footer_logo_8_=
+8.png"" alt=3D"""" width=3D""600"" height=3D""115"" border=3D""0""></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- END Footer - 1 -->
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</center>
+<img alt=3D"""" src=3D""https://ql9whnmm.r.us-east-1.awstrack.me/I0/0100018f20=
+6366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000/RMc52NSTU1DwKI3LRUrMHOX1=
+hX0=3D371"" style=3D""display: none; width: 1px; height: 1px;"">
+</body>
+</html>
+",0
+"Delivered-To: awaisamin09@gmail.com
+Received: by 2002:a05:6840:9aa4:b0:17c6:483f:10d5 with SMTP id g4csp1062537nly;
+        Sat, 27 Apr 2024 09:28:57 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHBTsB+3AQXKu+8Y+qthxFE7j3JgnQPo7vv3lTtNwjmWgInlz4mCJ/2kdYFZtvwmOaMg7d5
+X-Received: by 2002:a05:620a:2951:b0:790:c69a:d3f3 with SMTP id n17-20020a05620a295100b00790c69ad3f3mr1866616qkp.15.1714235337274;
+        Sat, 27 Apr 2024 09:28:57 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1714235337; cv=none;
+        d=google.com; s=arc-20160816;
+        b=jwxiRGqH78rYuPe9zWAgdYjOME3Asa2KCvAFwaNoMvCnC9/SRHFu8pKNrzANz38GCC
+         VAkhLptLuR5PyEMcj7vDEDLuBtgHaWOx07zSeYsowrzOw1hKuUI4SmGEll+A8m31NuQZ
+         JV5qJ+iErpoYWLPGv4HPuU4WPNIYcpcihIhWTDVxTi93otGgXN1m/HiJ7PD060NNqr4p
+         Sg0RL6/hOukFwa/uC+eOF6S15CtaCp0YZk0r0blFFTMgz76KnQ8cBNMuhyqZKy+pnhRl
+         Gs4ics8vG1P4ddJuw5agqwzit5zUJgplJGZuRVqBMK0VeV9L+VPmNG6MtloK27dxGBRv
+         j/vA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:content-transfer-encoding:mime-version
+         :subject:to:from:dkim-signature:dkim-signature;
+        bh=U7GfWtbHR/nBrbFcwZpssra7ezg248H73MkgrxV9Sj0=;
+        fh=ynGQ1apFrYQJopxq1S43aauLBxuPPzO5GhVh7wL0hug=;
+        b=cFiq4UkUn+Y0jN+IAejH1cT9GdEOrZDF4Dclc/gsxigSshOgkUZ3jljCzNlCsb/aWG
+         QjORrGDwK0KmB8oZwNUhMzCZU0UREwFkWuuwxg5v0WRMRQa8Leh+ZsJfC0GzeTLXDUoB
+         uhAMdlK6g4Wnt0X1orA7RiKeqRSJSmpNwSkmYfr+tP/PoIV9RqKPT9j6gnxfDVOj/OnK
+         gZi6S1IxPfAp24QY/SB1aqOp8vZFehQHH8oc83lXqV7xyJG8C91QyUBZs/GCCvleLjZs
+         aal+klBqJHHRldXl1A+rgeYEQ3DyqJ1pf6uCF+gG06DNV5staflLesSqfMBIb9Ua27bm
+         S9JQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@reddit.com header.s=2ybsbk45dtwlgerewyfzx5qt442lak5j header.b=NvlpxAmH;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Yurm+Uyz;
+       spf=pass (google.com: domain of 0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com designates 23.251.229.109 as permitted sender) smtp.mailfrom=0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=reddit.com
+Return-Path: <0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com>
+Received: from e229-109.smtp-out.amazonses.com (e229-109.smtp-out.amazonses.com. [23.251.229.109])
+        by mx.google.com with ESMTPS id y5-20020ae9f405000000b00787b85281e7si22141205qkl.714.2024.04.27.09.28.56
+        for <awaisamin09@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 27 Apr 2024 09:28:57 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com designates 23.251.229.109 as permitted sender) client-ip=23.251.229.109;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@reddit.com header.s=2ybsbk45dtwlgerewyfzx5qt442lak5j header.b=NvlpxAmH;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Yurm+Uyz;
+       spf=pass (google.com: domain of 0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com designates 23.251.229.109 as permitted sender) smtp.mailfrom=0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=reddit.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=2ybsbk45dtwlgerewyfzx5qt442lak5j; d=reddit.com; t=1714235336; h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date; bh=U7GfWtbHR/nBrbFcwZpssra7ezg248H73MkgrxV9Sj0=; b=NvlpxAmHKTLzyb06IVfQ4Xfy/+9wzXKe/9aylmenzVlM++O3L45hRrMZnYVKajhc 6K/sb7tlNv0YVTTJoAEixZGEZi5YEX41CgJUaBMmyrvVm0M7M2YavEwYAKky4rFDm3N zz/che2rm/XKG9olhKcRICHxGpy92bizqIEso384=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1714235336; h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:Feedback-ID; bh=U7GfWtbHR/nBrbFcwZpssra7ezg248H73MkgrxV9Sj0=; b=Yurm+Uyzp6ntFJpBBcc6Q660LcoPMWu1A+XmqAPzO+INUdTEV9VXMozx4af4x9Fq wy3gTEJtsM6dbfPHnH4s95QePUJ+MBlc0Ci/ybpsnZqgi2s6fkgEgYJJ8hCuvENAvW1 CQa2QgT4uCBdbnsOtQhcRebO7fXdFQeWfGfctqcE=
+From: Reddit <noreply@reddit.com>
+To: awaisamin09@gmail.com
+Subject: Reddit password reset
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Message-ID: <0100018f206366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000@email.amazonses.com>
+Date: Sat, 27 Apr 2024 16:28:56 +0000
+Feedback-ID: 1.us-east-1.UqlFplRllIQtiw+Kq2b87y7uRSu9p66fMici2AQNsMU=:AmazonSES
+X-SES-Outgoing: 2024.04.27-23.251.229.109
+
+<!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Transitional//EN"" ""http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"">
+<html xmlns=3D""http://www.w3.org/1999/xhtml"" xmlns:v=3D""urn:schemas-microso=
+ft-com:vml"" xmlns:o=3D""urn:schemas-microsoft-com:office:office"">
+<head>
+<!-- MonitorCampaignID: recover_password -->
+<!--[if gte mso 9]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<meta http-equiv=3D""Content-type"" content=3D""text/html; charset=3Dutf-8"">
+<meta name=3D""viewport"" content=3D""width=3Ddevice-width, initial-scale=3D1,=
+ maximum-scale=3D1"">
+<meta http-equiv=3D""X-UA-Compatible"" content=3D""IE=3Dedge"">
+<meta name=3D""format-detection"" content=3D""date=3Dno"">
+<meta name=3D""format-detection"" content=3D""address=3Dno"">
+<meta name=3D""format-detection"" content=3D""telephone=3Dno"">
+<meta name=3D""x-apple-disable-message-reformatting"">
+<!--[if !mso]><!-->
+<!--<![endif]-->
+<title>Email Template</title>
+<!--[if gte mso 9]>
+<style type=3D""text/css"" media=3D""all"">
+sup { font-size: 100% !important; }
+</style>
+<![endif]-->
+<style type=3D""text/css"" media=3D""screen"">
+body { padding:0 !important; margin:0 auto !important; display:block !impor=
+tant; min-width:100% !important; width:100% !important; background:#ffffff;=
+ -webkit-text-size-adjust:none }
+a { color:#313e42; text-decoration:none }
+p { padding:0 !important; margin:0 !important }
+img { margin: 0 !important; -ms-interpolation-mode: bicubic; /* Allow smoot=
+her rendering of resized image in Internet Explorer */ }
+a[x-apple-data-detectors] {
+color: inherit !important;
+text-decoration: inherit !important;
+font-size: inherit !important;
+font-family: inherit !important;
+font-weight: inherit !important;
+line-height: inherit !important;
+}
+.btn-12 a { display: block; padding: 4px; text-decoration: none; }
+.btn-14 a { display: block; padding: 8px; text-decoration: none; }
+.btn-14-4 a { display: block; padding: 8px; text-decoration: none; }
+.l-red a { color: #ff0000; }
+/* Mobile styles */
+@media only screen and (max-device-width: 480px), only screen and (max-widt=
+h: 480px) {
+.mpx-16 { padding-left: 16px !important; padding-right: 16px !important; }
+.mpb-48 { padding-bottom: 48px !important; }
+.mfz-16 { font-size: 16px !important; }
+.mlh-18 { line-height: 18px !important; }
+.mpb-28 { padding-bottom: 28px !important; }
+.mfz-14 { font-size: 14px !important; }
+.mlh-16 { line-height: 16px !important; }
+.mpb-12 { padding-bottom: 12px !important; }
+.mpt-8 { padding-top: 8px !important; }
+.mpb-44 { padding-bottom: 44px !important; }
+.mpb-27 { padding-bottom: 27px !important; }
+.mpt-21 { padding-top: 21px !important; }
+.mpb-34 { padding-bottom: 34px !important; }
+.mpb-17 { padding-bottom: 17px !important; }
+.mpb-20 { padding-bottom: 20px !important; }
+.mpt-16 { padding-top: 16px !important; }
+.mpt-34 { padding-top: 34px !important; }
+.mpx-12 { padding-left: 12px !important; padding-right: 12px !important; }
+.mfz-12 { font-size: 12px !important; }
+.mpb-8 { padding-bottom: 8px !important; }
+u + .body .gwfw { width:100% !important; width:100vw !important; }
+.td,
+.m-shell { width: 100% !important; min-width: 100% !important; }
+.mt-left { text-align: left !important; }
+.mt-center { text-align: center !important; }
+.mt-right { text-align: right !important; }
+.me-left { margin-right: auto !important; }
+.me-center { margin: 0 auto !important; }
+.me-right { margin-left: auto !important; }
+.h-auto { height: auto !important; }
+.w-auto { width: auto !important; }
+.fluid-img img { width: 100% !important; max-width: 100% !important; height=
+: auto !important; }
+.column,
+.column-top,
+.column-dir,
+.column-dir-top { float: left !important; width: 100% !important; display: =
+block !important; }
+.m-hide { display: none !important; width: 0 !important; height: 0 !importa=
+nt; font-size: 0 !important; line-height: 0 !important; min-height: 0 !impo=
+rtant; }
+.m-block { display: block !important; }
+/*Width*/
+.w-15 { width: 15px !important; }
+.w-8 { width: 8px !important; height: auto !important; }
+.w-12 { width: 12px !important; height: auto !important; }
+.w-60 { width: 60px !important; height: auto !important; }
+.w-54 { width: 54px !important; height: auto !important; }
+.w-54 img { width: 54px !important; height: auto !important; }
+.w-104 { width: 104px !important; height: auto !important; }
+.w-104 img { width: 104px !important; height: auto !important; }
+.w-114 { width: 114px !important; height: auto !important; }
+.w-114 img { width: 114px !important; height: auto !important; }
+.btn-14-4 { font-size: 12px !important; line-height: 16px !important; }
+.btn-14-4 a { padding: 4px !important; }
+.w-2p { width: 2% !important; }
+.w-32p { width: 32% !important; }
+.w-49p { width: 49% !important; }
+.w-50p { width: 50% !important; }
+.w-100p { width: 100% !important; }
+/*Text*/
+}
+</style>
+</head>
+<body class=3D""body"" style=3D""padding:0 !important; margin:0 auto !importan=
+t; display:block !important; min-width:100% !important; width:100% !importa=
+nt; background:#ffffff; -webkit-text-size-adjust:none;"">
+<center>
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"" styl=
+e=3D""margin: 0; padding: 0; width: 100%;"" bgcolor=3D""#ffffff"" class=3D""gwfw=
+"">
+<tr>
+<td style=3D""margin: 0; padding: 0; width: 100%;"" align=3D""center"">
+<table width=3D""600"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"" class=
+=3D""m-shell"">
+<tr>
+<td class=3D""td"" style=3D""width:600px; min-width:600px; font-size:0pt; line=
+-height:0pt; padding:0; margin:0; font-weight:normal;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<!-- Reset your password -->
+<tr>
+<td class=3D""img"" style=3D""font-size:0pt; line-height:0pt; text-align:left;=
+"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""px-32 mpx-16"" style=3D""padding-left: 32px; padding-right: 32px=
+;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""pt-25 pt-16 pb-28 mpb-20"" style=3D""padding-top: 16px; padding-=
+bottom: 28px;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""pb-34 mpb-28"" style=3D""padding-bottom: 34px;"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""img w-104"" width=3D""112"" style=3D""font-size:0pt; line-height:0=
+pt; text-align:left;""><a href=3D""https://www.reddit.com/"" target=3D""_blank""=
+><img src=3D""https://www.redditstatic.com/emaildigest/logo@2x.png"" width=3D=
+""112"" height=3D""39"" border=3D""0"" alt=3D"""" /></a></td>
+<td class=3D""img"" width=3D""20"" style=3D""font-size:0pt; line-height:0pt; tex=
+t-align:left;""></td>
+<td class=3D""img"" style=3D""font-size:0pt; line-height:0pt; text-align:left;=
+"">
+<table width=3D""100%"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td align=3D""right"">
+<table border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+
+<tr>
+<td class=3D""img"" width=3D""16"" valign=3D""top"" style=3D""font-size:0pt; line-=
+height:0pt; text-align:left;""><img src=3D""https://styles.redditmedia.com/t5=
+_98jz2h/styles/profileIcon_snoo-nftv2_bmZ0X2VpcDE1NToxMzdfZWI5NTlhNzE1ZGZmZ=
+mU2ZjgyZjQ2MDU1MzM5ODJjNDg1OWNiMTRmZV8xMTg4OTQ0MQ_rare_f6f3fd99-25cd-40ec-9=
+4d3-8ab11a47f784-headshot.png?crop=3D256:256,smart&amp;height=3D256&amp;wid=
+th=3D256&amp;s=3D75f5e24c16cc7ec3faff5a49d883cd1a6329df02"" width=3D""16"" hei=
+ght=3D""16"" border=3D""0"" alt=3D"""" /></td>
+<td class=3D""img"" width=3D""4"" style=3D""font-size:0pt; line-height:0pt; text=
+-align:left;""></td>
+<td class=3D""text-12 c-grey-4"" style=3D""font-size:12px; line-height:14px; f=
+ont-family:Helvetica, Arial, sans-serif; text-align:left; min-width:auto !i=
+mportant; color:#7a9299;""><a href=3D""https://www.reddit.com/user/A_Squareo1=
+o/?correlation_id=3D4ce6361e-fc06-42d4-aa97-9c3053faa068&amp;ref=3Drecover_=
+password&amp;ref_campaign=3Drecover_password&amp;ref_source=3Demail"" target=
+=3D""_blank"" class=3D""link c-grey-4"" style=3D""text-decoration:none; color:#7=
+a9299;""><span class=3D""link c-grey-4"" style=3D""text-decoration:none; color:=
+#7a9299;"">u/A_Squareo1o</span></a></td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""text-16 mfz-14 mlh-16 pb-28 mpb-20"" style=3D""font-size:16px; l=
+ine-height:18px; color:#000000; font-family:Helvetica, Arial, sans-serif; t=
+ext-align:left; min-width:auto !important; padding-bottom: 28px;"">
+
+Hi A_Squareo1o,
+
+<br /><br />
+
+Thanks for requesting a password reset. To create a new password, just use =
+the button below.
+</td>
+</tr>
+<tr>
+<td class=3D""pb-34 mpb-28"" align=3D""center"" style=3D""padding-bottom: 34px;""=
+>
+<table width=3D""214"" border=3D""0"" cellspacing=3D""0"" cellpadding=3D""0"">
+<tr>
+<td class=3D""btn-14"" bgcolor=3D""#0079d3"" style=3D""border-radius: 4px; font-=
+size:14px; line-height:18px; mso-padding-alt:8px; color:#ffffff; font-famil=
+y:Helvetica, Arial, sans-serif; text-align:center; min-width:auto !importan=
+t;""><a href=3D""https://www.reddit.com/passwordrecovery?%24deep_link=3Dtrue&=
+amp;correlation_id=3D4ce6361e-fc06-42d4-aa97-9c3053faa068&amp;ref=3Drecover=
+_password&amp;ref_campaign=3Drecover_password&amp;ref_source=3Demail&amp;to=
+ken=3Drpt_TsIWAMlATimQpm1ddjkUCA"" target=3D""_blank"" class=3D""link c-white"" =
+style=3D""display: block; padding: 8px; text-decoration:none; color:#ffffff;=
+""><span class=3D""link c-white"" style=3D""text-decoration:none; color:#ffffff=
+;""><strong>Reset Password</strong></span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""text-16 mfz-14 mlh-16 pb-28 mpb-20"" style=3D""font-size:16px; l=
+ine-height:18px; color:#000000; font-family:Helvetica, Arial, sans-serif; t=
+ext-align:left; min-width:auto !important; padding-bottom: 28px;"">
+If you didn=E2=80=99t make this request, you can ignore this email and carr=
+y on as usual. If you need any more help logging in to your Reddit account,=
+ check out our <a href=3D""https://www.reddithelp.com/en/categories/privacy-=
+security/account-security?$web_only=3Dtrue"" target=3D""_blank"" class=3D""link=
+ c-blue"" style=3D""text-decoration:none; color:#006cbf;""><span class=3D""link=
+ c-blue"" style=3D""text-decoration:none; color:#006cbf;"">Account Security FA=
+Qs</span></a> or <a href=3D""https://www.reddithelp.com/en/submit-request?$w=
+eb_only=3Dtrue"" target=3D""_blank"" class=3D""link c-blue"" style=3D""text-decor=
+ation:none; color:#006cbf;""><span class=3D""link c-blue"" style=3D""text-decor=
+ation:none; color:#006cbf;"">contact us</span></a>.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END Reset your password -->
+<!-- Footer - 1 -->
+<tr>
+<td class=3D""pt-48 mpt-16 mpt-34"" style=3D""padding-top: 48px;"" bgcolor=3D""#=
+f2f5f6"">
+<table width=3D""100%"" cellspacing=3D""0"" cellpadding=3D""0"" border=3D""0"">
+<tbody>
+<tr>
+<td class=3D""img-center pb-28 w-104 mpb-20"" style=3D""font-size:0pt; line-he=
+ight:0pt; text-align:center; padding-bottom: 28px;""><a href=3D""https://www.=
+reddit.com/"" target=3D""_blank""><img src=3D""https://www.redditstatic.com/ema=
+ildigest/logo@2x.png"" alt=3D"""" width=3D""115"" height=3D""40"" border=3D""0""></a=
+></td>
+</tr>
+<tr>
+<td class=3D""pb-20"" style=3D""padding-bottom: 20px;"" align=3D""center"">
+<table cellspacing=3D""0"" cellpadding=3D""0"" border=3D""0"">
+<tbody>
+<tr>
+<td class=3D""img w-114"" style=3D""font-size:0pt; line-height:0pt; text-align=
+:left;"" valign=3D""top""><a href=3D""https://apps.apple.com/us/app/reddit/id10=
+64216828"" target=3D""_blank""><img src=3D""https://www.redditstatic.com/emaild=
+igest/app_store_8_8.png"" alt=3D"""" width=3D""124"" height=3D""37"" border=3D""0"">=
+</a></td>
+<td class=3D""img w-8"" style=3D""font-size:0pt; line-height:0pt; text-align:l=
+eft;"" width=3D""10""></td>
+<td class=3D""img w-114"" style=3D""font-size:0pt; line-height:0pt; text-align=
+:left;"" valign=3D""top""><a href=3D""https://play.google.com/store/apps/detail=
+s?id=3Dcom.reddit.frontpage"" target=3D""_blank""><img src=3D""https://www.redd=
+itstatic.com/emaildigest/google_play_8_8.png"" alt=3D"""" width=3D""124"" height=
+=3D""37"" border=3D""0""></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""pb-20 px-24 mpx-12 mpb-20"" style=3D""padding-bottom: 20px; padd=
+ing-left: 24px; padding-right: 24px;"">
+<table width=3D""100%"" cellspacing=3D""0"" cellpadding=3D""0"" border=3D""0"">
+<tbody>
+<tr>
+<td class=3D""text-16-8 mfz-12 mlh-18 a-center"" style=3D""font-size:16px; lin=
+e-height:18px; color:#687981; font-family:Helvetica, Arial, sans-serif; min=
+-width:auto !important; text-align:center;"">
+You are receiving this email because a Reddit account, u/A_Squareo1o, is re=
+gistered to this email address.
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D""text-16-8 mfz-12 mlh-18 c-dark-8-8 a-center px-24 mpx-12"" styl=
+e=3D""font-size:16px; line-height:18px; font-family:Helvetica, Arial, sans-s=
+erif; min-width:auto !important; color:#222222; text-align:center; padding-=
+left: 24px; padding-right: 24px;"">548 Market St., #16093, San Francisco, CA=
+ 94104=E2=80=935401</td>
+</tr>
+<tr>
+<td class=3D""fluid-img"" style=3D""font-size:0pt; line-height:0pt; text-align=
+:left;""><img src=3D""https://www.redditstatic.com/emaildigest/footer_logo_8_=
+8.png"" alt=3D"""" width=3D""600"" height=3D""115"" border=3D""0""></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- END Footer - 1 -->
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</center>
+<img alt=3D"""" src=3D""https://ql9whnmm.r.us-east-1.awstrack.me/I0/0100018f20=
+6366e6-ecc08b84-2648-492e-aed3-51c135b7527f-000000/RMc52NSTU1DwKI3LRUrMHOX1=
+hX0=3D371"" style=3D""display: none; width: 1px; height: 1px;"">
+</body>
+</html>
+",0
