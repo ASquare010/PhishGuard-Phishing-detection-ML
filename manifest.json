@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "Phishing Detection",
-    "version": "1.0",
+    "name": "PhishGuard",
+    "version": "1.1",
     "description": "Enhance online security with real-time phishing detection for URLs and emails. Protect yourself from phishing attacks with machine learning-powered analysis and instant alerts.",    
     "permissions": [
       "tabs",

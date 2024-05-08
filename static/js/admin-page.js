@@ -1,5 +1,5 @@
 // const base = 'https://phishing-detection-via-ml-654532c3f1f5.herokuapp.com/';
-const base = 'http://192.168.100.102:5000';
+const base = 'http://172.20.193.128:5000';
 
 const apiKey = 'aB3x8Yp2qR5sW9tZ';
 

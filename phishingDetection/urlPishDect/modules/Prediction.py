@@ -4,7 +4,7 @@ import pandas as pd
 
 class PredictionURLS: 
 
-        resultOutput = ''
+        resultOutput = ""
 
         def __init__(self,urls = [],modelPath = "phishingDetection/urlPishDect/model/bestmodel.pkl"):                
 
@@ -43,4 +43,4 @@ class PredictionURLS:
 
                 result = rf.predict(df)
 
-                return f'Result: {result}'
+                return str(result[0])
