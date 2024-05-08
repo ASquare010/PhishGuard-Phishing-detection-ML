@@ -8,3 +8,4 @@ Email and Url Phishing Detection by using Machine Learning
 
 # website
 ![Alt text](static/assets/view.png)
+![Alt text](static/assets/admin.png)
